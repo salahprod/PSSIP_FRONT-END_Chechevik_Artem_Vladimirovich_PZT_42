@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="author" content="StarEvents Team">
+    <meta name="keywords" content="организация мероприятий, артисты, шоу, ведущие, праздник, StarEvents">
+    <meta name="description" content="StarEvents — база артистов и исполнителей для вашего события. Организуем яркие мероприятия и впечатления.">
+    <title>StarEvents — Организуем яркие мероприятия и впечатления</title>
+    <link rel="icon" type="image/png" href="Image/favicon.png">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ШАПКА И ГЛАВНЫЙ ЭКРАН -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="Image/logo.png" alt="Star Booking - Главная страница">
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Ведущие</a></li>
+                    <li><a href="#">Музыканты</a></li>
+                    <li><a href="#">Шоу</a></li>
+                    <li><a href="#">Услуги</a></li>
+                </ul>
+                <div class="nav-auth">
+                    <a href="#" class="btn-login">Войти</a>
+                    <a href="#" class="btn btn-primary">Регистрация</a>
+                </div>
+            </nav>
+            
+            <div class="hero">
+                <h1>Организуем яркие мероприятия и впечатления</h1>
+                <p>База артистов и исполнителей для вашего события</p>
+                
+                <div class="search-filter">
+                    <div class="filter-item">
+                        <select class="filter-select" aria-label="Выбор страны">
+                            <option>Ваша страна</option>
+                            <option>Россия</option>
+                            <option>Казахстан</option>
+                            <option>Беларусь</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <select class="filter-select" aria-label="Выбор города">
+                            <option>Ваш город</option>
+                            <option>Москва</option>
+                            <option>Санкт-Петербург</option>
+                            <option>Алматы</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <select class="filter-select" aria-label="Выбор категории">
+                            <option>Категория</option>
+                            <option>Ведущие</option>
+                            <option>Музыканты</option>
+                            <option>Шоу</option>
+                        </select>
+                    </div>
+                    <button class="btn-submit">Найти</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- СЕКЦИЯ: КАТЕГОРИИ -->
+    <section class="categories" aria-label="Категории услуг">
+        <div class="container">
+            <h2 class="visually-hidden">Категории услуг</h2>
+            <div class="grid-4-columns">
+                <div class="category-card">
+                    <img src="Image/ved.png" alt="Ведущие">
+                    <div class="card-overlay">
+                        <span>Ведущие</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="Image/zvezd.png" alt="Звезды">
+                    <div class="card-overlay">
+                        <span>Звезды</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="Image/artist.png" alt="Артисты на праздник">
+                    <div class="card-overlay">
+                        <span>Артисты на праздник</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="Image/caver.png" alt="Кавер-группы">
+                    <div class="card-overlay">
+                        <span>Кавер-группы</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="Image/baraban.png" alt="DJ / Музыканты">
+                    <div class="card-overlay">
+                        <span>DJ / Музыканты</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="Image/music.png" alt="Саксофонисты">
+                    <div class="card-overlay">
+                        <span>Саксофонисты</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="Image/foto.png" alt="Фото">
+                    <div class="card-overlay">
+                        <span>Фото</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="Image/camera.png" alt="Видео">
+                    <div class="card-overlay">
+                        <span>Видео</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="Image/svaz.png" alt="Техническое обеспечение">
+                    <div class="card-overlay">
+                        <span>Техническое обеспечение</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="Image/arca.png" alt="Декорирование / Флористика">
+                    <div class="card-overlay">
+                        <span>Декорирование / Флористика</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="Image/desert.png" alt="Кондитеры">
+                    <div class="card-overlay">
+                        <span>Кондитеры</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="Image/salut.png" alt="Салют">
+                    <div class="card-overlay">
+                        <span>Салют</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="Image/park.png" alt="Шоу-программы">
+                    <div class="card-overlay">
+                        <span>Шоу-программы</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="Image/crasota.png" alt="Локации">
+                    <div class="card-overlay">
+                        <span>Локации</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="Image/arend.png" alt="Аренда">
+                    <div class="card-overlay">
+                        <span>Аренда</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="Image/vertolet.png" alt="Аренда транспорта">
+                    <div class="card-overlay">
+                        <span>Аренда транспорта</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: СПЕЦПРЕДЛОЖЕНИЯ -->
+    <section class="offers section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Спецпредложения</h2>
+                <a href="#" class="link-all">Получить больше</a>
+            </div>
+            <div class="grid-container grid-4-columns">
+                <div class="offer-card">
+                    <div class="offer-img-box">
+                        <img src="Image/chel.png" alt="Ансамбль Цыганские звёзды">
+                        <div class="offer-img-overlay">
+                            <h3>Ансамбль "Цыганские звёзды" Романа Коржова</h3>
+                        </div>
+                    </div>
+                    <div class="offer-info-box">
+                        <div class="offer-meta-row">
+                            <div class="offer-stars">★★★★★</div>
+                            <div class="offer-price">от <span>1200</span> ₽</div>
+                        </div>
+                        <div class="offer-date">С 2.02 по 30.04</div>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-img-box">
+                        <img src="Image/ludi.png" alt="Ансамбль">
+                        <div class="offer-img-overlay">
+                            <h3>Ансамбль "Цыганские звёзды" Романа Коржова</h3>
+                        </div>
+                    </div>
+                    <div class="offer-info-box">
+                        <div class="offer-meta-row">
+                            <div class="offer-stars">★★★★★</div>
+                            <div class="offer-price">от <span>1200</span> ₽</div>
+                        </div>
+                        <div class="offer-date">С 2.02 по 30.04</div>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-img-box">
+                        <img src="Image/concert.png" alt="Ансамбль">
+                        <div class="offer-img-overlay">
+                            <h3>Ансамбль "Цыганские звёзды" Романа Коржова</h3>
+                        </div>
+                    </div>
+                    <div class="offer-info-box">
+                        <div class="offer-meta-row">
+                            <div class="offer-stars">★★★★★</div>
+                            <div class="offer-price">от <span>1200</span> ₽</div>
+                        </div>
+                        <div class="offer-date">С 2.02 по 30.04</div>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-img-box">
+                        <img src="Image/stadion.png" alt="Ансамбль">
+                        <div class="offer-img-overlay">
+                            <h3>Ансамбль "Цыганские звёзды" Романа Коржова</h3>
+                        </div>
+                    </div>
+                    <div class="offer-info-box">
+                        <div class="offer-meta-row">
+                            <div class="offer-stars">★★★★★</div>
+                            <div class="offer-price">от <span>1200</span> ₽</div>
+                        </div>
+                        <div class="offer-date">С 2.02 по 30.04</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: КАК МЫ РАБОТАЕМ -->
+    <section class="how-we-work">
+        <div class="container">
+            <h2 class="section-title">Как мы работаем</h2>
+            <div class="steps-container">
+                <div class="step-node step-up">
+                    <h3>Выберите артистов из списка и добавьте в запрос</h3>
+                    <div class="step-circle-wrapper">
+                        <span class="step-number">1</span>
+                        <div class="step-circle">
+                            <img src="Image/telefon.png" alt="Выбор артистов">
+                        </div>
+                    </div>
+                </div>
+                <div class="step-node step-down">
+                    <div class="step-circle-wrapper">
+                        <span class="step-number">2</span>
+                        <div class="step-circle">
+                            <img src="Image/sema.png" alt="Бронирование">
+                        </div>
+                    </div>
+                    <h3>Бронируйте через наш сервис, без комиссии, взамен гарантируем качество и сервис</h3>
+                </div>
+                <div class="step-node step-up">
+                    <h3>Расскажите Ваши пожелания, где, когда и что за праздник</h3>
+                    <div class="step-circle-wrapper">
+                        <span class="step-number">3</span>
+                        <div class="step-circle">
+                            <img src="Image/podar.png" alt="Пожелания">
+                        </div>
+                    </div>
+                </div>
+                <div class="step-node step-down">
+                    <div class="step-circle-wrapper">
+                        <span class="step-number">4</span>
+                        <div class="step-circle">
+                            <img src="Image/lection.png" alt="Выбор координатора">
+                        </div>
+                    </div>
+                    <h3>Выберите координатора, организуйте под ключ или проявите организаторские способности сами</h3>
+                </div>
+                <div class="step-node step-up">
+                    <h3>Обрабатываем запрос и предоставляем предложение</h3>
+                    <div class="step-circle-wrapper">
+                        <span class="step-number">5</span>
+                        <div class="step-circle">
+                            <img src="Image/nout.png" alt="Обработка запроса">
+                        </div>
+                    </div>
+                </div>
+                <div class="step-node step-down">
+                    <div class="step-circle-wrapper">
+                        <span class="step-number">6</span>
+                        <div class="step-circle">
+                            <img src="Image/wow.png" alt="Праздник">
+                        </div>
+                    </div>
+                    <h3>Наслаждайтесь праздником, а наш онлайн помощник подскажет все тонкости</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ (FAQ) -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="faq-title">Часто <span>задаваемые вопросы</span></h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <input type="checkbox" id="faq-1" class="faq-input">
+                    <label for="faq-1" class="faq-trigger">
+                        Как забронировать артиста или ведущего?
+                    </label>
+                    <div class="faq-content">
+                        <p>Оставьте заявку на сайте через форму обратной связи, и наш координатор свяжется с вами в течение 15 минут.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <input type="checkbox" id="faq-2" class="faq-input">
+                    <label for="faq-2" class="faq-trigger">
+                        Есть ли комиссия для артистов?
+                    </label>
+                    <div class="faq-content">
+                        <p>Для артистов размещение на площадке абсолютно бесплатно. Комиссия взимается только с заказчика в размере 10% от суммы заказа.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <input type="checkbox" id="faq-3" class="faq-input">
+                    <label for="faq-3" class="faq-trigger">
+                        Как происходит оплата и гарантии?
+                    </label>
+                    <div class="faq-content">
+                        <p>Оплата через защищенный сервис. Деньги замораживаются до подтверждения мероприятия и перечисляются артисту только после успешного выступления.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <input type="checkbox" id="faq-4" class="faq-input">
+                    <label for="faq-4" class="faq-trigger">
+                        Могу ли я отменить заказ?
+                    </label>
+                    <div class="faq-content">
+                        <p>Да, вы можете отменить заказ не позднее чем за 14 дней до мероприятия. В этом случае комиссия не взимается.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <input type="checkbox" id="faq-5" class="faq-input">
+                    <label for="faq-5" class="faq-trigger">
+                        Как стать артистом на вашей площадке?
+                    </label>
+                    <div class="faq-content">
+                        <p>Заполните заявку в разделе "Как попасть в нашу базу", и наш менеджер свяжется с вами для оформления портфолио.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-action">
+                <button class="btn-submit">Отправить заявку</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: ПОПУЛЯРНЫЕ АРТИСТЫ И ШОУ -->
+    <section class="popular-artists">
+        <div class="container">
+            <h2 class="artists-title">Популярные <span>артисты и шоу</span></h2>
+            <div class="artists-grid">
+                <div class="artist-card">
+                    <img src="Image/ansambl.png" alt="Ансамбль Цыганские звёзды">
+                    <div class="artist-overlay">
+                        <h3 class="artist-name">Ансамбль "Цыганские звёзды" Романа Коржова</h3>
+                        <div class="artist-meta">
+                            <div class="rating-stars">★★★★★</div>
+                            <div class="artist-price">от <span>1200</span> ₽</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="artist-card">
+                    <img src="Image/dva.png" alt="Ансамбль">
+                    <div class="artist-overlay">
+                        <h3 class="artist-name">Ансамбль "Цыганские звёзды" Романа Коржова</h3>
+                        <div class="artist-meta">
+                            <div class="rating-stars">★★★★★</div>
+                            <div class="artist-price">от <span>1200</span> ₽</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="artist-card">
+                    <img src="Image/tri.png" alt="Ансамбль">
+                    <div class="artist-overlay">
+                        <h3 class="artist-name">Ансамбль "Цыганские звёзды" Романа Коржова</h3>
+                        <div class="artist-meta">
+                            <div class="rating-stars">★★★★★</div>
+                            <div class="artist-price">от <span>1200</span> ₽</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="artist-card">
+                    <img src="Image/cetiri.png" alt="Ансамбль">
+                    <div class="artist-overlay">
+                        <h3 class="artist-name">Ансамбль "Цыганские звёзды" Романа Коржова</h3>
+                        <div class="artist-meta">
+                            <div class="rating-stars">★★★★★</div>
+                            <div class="artist-price">от <span>1200</span> ₽</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="artist-card">
+                    <img src="Image/pat.png" alt="Ансамбль">
+                    <div class="artist-overlay">
+                        <h3 class="artist-name">Ансамбль "Цыганские звёзды" Романа Коржова</h3>
+                        <div class="artist-meta">
+                            <div class="rating-stars">★★★★★</div>
+                            <div class="artist-price">от <span>1200</span> ₽</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="artist-card">
+                    <img src="Image/shest.png" alt="Ансамбль">
+                    <div class="artist-overlay">
+                        <h3 class="artist-name">Ансамбль "Цыганские звёзды" Романа Коржова</h3>
+                        <div class="artist-meta">
+                            <div class="rating-stars">★★★★★</div>
+                            <div class="artist-price">от <span>1200</span> ₽</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="artist-card">
+                    <img src="Image/sem.png" alt="Ансамбль">
+                    <div class="artist-overlay">
+                        <h3 class="artist-name">Ансамбль "Цыганские звёзды" Романа Коржова</h3>
+                        <div class="artist-meta">
+                            <div class="rating-stars">★★★★★</div>
+                            <div class="artist-price">от <span>1200</span> ₽</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="artist-card">
+                    <img src="Image/vosem.png" alt="Ансамбль">
+                    <div class="artist-overlay">
+                        <h3 class="artist-name">Ансамбль "Цыганские звёзды" Романа Коржова</h3>
+                        <div class="artist-meta">
+                            <div class="rating-stars">★★★★★</div>
+                            <div class="artist-price">от <span>1200</span> ₽</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: БАННЕР "КАК ПОПАСТЬ В НАШУ БАЗУ" -->
+    <section class="cta-base-banner">
+        <div class="container">
+            <h2>Как попасть в нашу базу</h2>
+            <p>Для важных и неотложных переговоров — звоните</p>
+            <button class="btn btn-white">Отправить заявку</button>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: ФОРМА ОБРАТНОЙ СВЯЗИ -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-wrapper">
+                <h2 class="section-title">Напишите <span>нам письмо</span></h2>
+                <form action="#" method="POST" class="feedback-form" id="feedbackForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Ваше имя *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Ваш Email *" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Ваш телефон">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Ваше сообщение *" required></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent">Я согласен с <a href="#">политикой обработки персональных данных</a></label>
+                    </div>
+                    <button type="submit" class="btn-submit">Отправить сообщение</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: ЧТО О НАС ГОВОРЯТ -->
+    <section class="reviews-section container">
+        <h2 class="section-title">Что о нас говорят</h2>
+        <p class="section-subtitle">Quisque posuere mollis ipsum et molestie. Fusce cursus, risus vel scelerisque porttitor, leo quam vulputate nibh, sit amet blandit erat magna.</p>
+        
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="reviewer-profile">
+                    <div class="avatar-wrapper">
+                        <img src="Image/celic.png" alt="Mr Jone Dose" class="reviewer-avatar">
+                    </div>
+                    <div>
+                        <h3 class="reviewer-name">Mr Jone Dose</h3>
+                        <p class="reviewer-role">Директор</p>
+                    </div>
+                </div>
+                <p class="review-text">Quisque posuere mollis ipsum et molestie. Fusce cursus, risus vel scelerisque porttitor, leo quam vulputate nibh, sit amet blandit erat magna.</p>
+            </div>
+            <div class="review-card">
+                <div class="reviewer-profile">
+                    <div class="avatar-wrapper">
+                        <img src="Image/celic.png" alt="Alex Smith" class="reviewer-avatar">
+                    </div>
+                    <div>
+                        <h3 class="reviewer-name">Alex Smith</h3>
+                        <p class="reviewer-role">Организатор</p>
+                    </div>
+                </div>
+                <p class="review-text">Отличный сервис! Быстро нашли ведущего на свадьбу. Огромное спасибо команде StarEvents!</p>
+            </div>
+            <div class="review-card">
+                <div class="reviewer-profile">
+                    <div class="avatar-wrapper">
+                        <img src="Image/celic.png" alt="Elena Volkova" class="reviewer-avatar">
+                    </div>
+                    <div>
+                        <h3 class="reviewer-name">Elena Volkova</h3>
+                        <p class="reviewer-role">Менеджер</p>
+                    </div>
+                </div>
+                <p class="review-text">Огромный выбор артистов. Удобный поиск и бронирование. Обязательно вернемся!</p>
+            </div>
+        </div>
+
+        <div class="slider-controls">
+            <button class="slider-arrow arrow-left" aria-label="Предыдущий отзыв">←</button>
+            <button class="slider-arrow arrow-right" aria-label="Следующий отзыв">→</button>
+        </div>
+
+        <div class="brands-row">
+            <img src="Image/pay.svg" alt="Google Pay">
+            <img src="Image/logo.svg" alt="Partner 2">
+            <img src="Image/logo2.svg" alt="Partner 3">
+            <img src="Image/logo3.svg" alt="Apple Pay">
+            <img src="Image/logo4.svg" alt="Partner 5">
+            <img src="Image/logo2.svg" alt="Partner 6">
+            <img src="Image/logo5.svg" alt="Partner 7">
+            <img src="Image/pay.svg" alt="Google Pay">
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: ФИОЛЕТОВЫЙ БАННЕР -->
+    <section class="purple-cta-banner">
+        <div class="container purple-banner-content">
+            <h3>Присоединяйся к нашей большой команде нас уже <span>123,000 артистов</span></h3>
+            <button class="btn-banner-white">Отправить заявку</button>
+        </div>
+    </section>
+
+    <!-- ПОДВАЛ -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top-row">
+                <div class="footer-logo">Star Booking</div>
+                <div class="footer-auth-buttons">
+                    <a href="#" class="footer-btn-link">Регистрация</a>
+                    <a href="#" class="footer-btn-box">Войти</a>
+                </div>
+            </div>
+
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Work</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Разделы</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Work</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Теги</h4>
+                    <ul>
+                        <li><a href="#">#tagtag</a></li>
+                        <li><a href="#">#team</a></li>
+                        <li><a href="#">#work</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Популярное</h4>
+                    <ul>
+                        <li><a href="#">#trip</a></li>
+                        <li><a href="#">#team</a></li>
+                        <li><a href="#">#work</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Для клиентов</h4>
+                    <p class="footer-contact">+099 94 42 999</p>
+                    <p class="footer-contact">example@mail.com</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Для сотрудничества</h4>
+                    <p class="footer-contact">+097 20 89 728</p>
+                    <p class="footer-contact">work@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom-row">
+                <p class="copyright">COPYRIGHT WOOCOMMERCE 2020 - <span>TERMS & CONDITIONS</span> <span>PRIVACY POLICY</span></p>
+                <div class="footer-socials">
+                    <a href="#" class="social-link-icon" aria-label="Facebook"><img src="Image/facebook.svg" alt="Facebook"></a>
+                    <a href="#" class="social-link-icon" aria-label="Telegram"><img src="Image/Telegram.svg" alt="Telegram"></a>
+                    <a href="#" class="social-link-icon" aria-label="Viber"><img src="Image/viber.svg" alt="Viber"></a>
+                    <a href="#" class="social-link-icon" aria-label="WhatsApp"><img src="Image/fa.svg" alt="WhatsApp"></a>
+                    <a href="#" class="social-link-icon" aria-label="Instagram"><img src="Image/insta.svg" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Гамбургер-меню
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (hamburger) {
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+        }
+        
+        // Валидация формы
+        const form = document.getElementById('feedbackForm');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                const name = document.getElementById('name');
+                const email = document.getElementById('email');
+                const message = document.getElementById('message');
+                const consent = document.getElementById('consent');
+                
+                if (!name.value.trim()) {
+                    e.preventDefault();
+                    alert('Пожалуйста, введите ваше имя');
+                    name.focus();
+                    return false;
+                }
+                if (!email.value.trim()) {
+                    e.preventDefault();
+                    alert('Пожалуйста, введите ваш email');
+                    email.focus();
+                    return false;
+                }
+                if (!message.value.trim()) {
+                    e.preventDefault();
+                    alert('Пожалуйста, введите сообщение');
+                    message.focus();
+                    return false;
+                }
+                if (!consent.checked) {
+                    e.preventDefault();
+                    alert('Пожалуйста, подтвердите согласие на обработку персональных данных');
+                    return false;
+                }
+                alert('Спасибо! Ваше сообщение отправлено.');
+            });
+        }
+        
+        // Анимация при скролле
+        const animatedElements = document.querySelectorAll('.artist-card, .offer-card, .category-card, .review-card');
+        
+        function checkScroll() {
+            animatedElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                if (rect.top < windowHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+        
+        animatedElements.forEach(el => {
+            el.classList.add('fade-animate');
+        });
+        
+        window.addEventListener('load', checkScroll);
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('resize', checkScroll);
+    </script>
+</body>
+</html>
