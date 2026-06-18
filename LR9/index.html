@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="author" content="StarEvents Team">
+    <meta name="keywords" content="организация мероприятий, артисты, шоу, ведущие, праздник, StarEvents">
+    <meta name="description" content="StarEvents — база артистов и исполнителей для вашего события. Организуем яркие мероприятия и впечатления.">
+    <title>StarEvents — Организуем яркие мероприятия и впечатления</title>
+    <link rel="icon" type="image/png" href="Image/favicon.png">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- СПОСОБ 1: ВНЕШНИЙ СКРИПТ (основной файл) -->
+    <script src="js/scripts.js" defer></script>
+</head>
+<body>
+
+    <!-- ШАПКА И ГЛАВНЫЙ ЭКРАН -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="Image/logo.png" alt="Star Booking - Главная страница">
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#" onclick="handleCategoryClick('Ведущие')">Ведущие</a></li>
+                    <li><a href="#" onclick="handleCategoryClick('Музыканты')">Музыканты</a></li>
+                    <li><a href="#" onclick="handleCategoryClick('Шоу')">Шоу</a></li>
+                    <li><a href="#" onclick="handleCategoryClick('Услуги')">Услуги</a></li>
+                </ul>
+                <div class="nav-auth">
+                    <a href="#" class="btn-login" onclick="showLoginDialog()">Войти</a>
+                    <a href="#" class="btn btn-primary" onclick="showRegisterDialog()">Регистрация</a>
+                </div>
+            </nav>
+            
+            <div class="hero">
+                <h1>Организуем яркие мероприятия и впечатления</h1>
+                <p>База артистов и исполнителей для вашего события</p>
+                
+                <div class="search-filter">
+                    <div class="filter-item">
+                        <select class="filter-select" id="countrySelect" aria-label="Выбор страны">
+                            <option value="">Ваша страна</option>
+                            <option value="Россия">Россия</option>
+                            <option value="Казахстан">Казахстан</option>
+                            <option value="Беларусь">Беларусь</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <select class="filter-select" id="citySelect" aria-label="Выбор города">
+                            <option value="">Ваш город</option>
+                            <option value="Москва">Москва</option>
+                            <option value="Санкт-Петербург">Санкт-Петербург</option>
+                            <option value="Алматы">Алматы</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <select class="filter-select" id="categorySelect" aria-label="Выбор категории">
+                            <option value="">Категория</option>
+                            <option value="Ведущие">Ведущие</option>
+                            <option value="Музыканты">Музыканты</option>
+                            <option value="Шоу">Шоу</option>
+                        </select>
+                    </div>
+                    <button class="btn-submit" onclick="performSearch()">Найти</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- СЕКЦИЯ: КАТЕГОРИИ -->
+    <section class="categories" aria-label="Категории услуг">
+        <div class="container">
+            <h2 class="visually-hidden">Категории услуг</h2>
+            <div class="grid-4-columns" id="categoriesGrid"></div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: СПЕЦПРЕДЛОЖЕНИЯ -->
+    <section class="offers section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Спецпредложения</h2>
+                <a href="#" class="link-all" onclick="showAllOffers()">Получить больше</a>
+            </div>
+            <div class="grid-container grid-4-columns" id="offersGrid"></div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: КАК МЫ РАБОТАЕМ -->
+    <section class="how-we-work">
+        <div class="container">
+            <h2 class="section-title">Как мы работаем</h2>
+            <div class="steps-container" id="stepsContainer"></div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ (FAQ) -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="faq-title">Часто <span>задаваемые вопросы</span></h2>
+            <div class="faq-container" id="faqContainer"></div>
+            <div class="faq-action">
+                <button class="btn-submit" onclick="showApplicationForm()">Отправить заявку</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: ПОПУЛЯРНЫЕ АРТИСТЫ И ШОУ -->
+    <section class="popular-artists">
+        <div class="container">
+            <h2 class="artists-title">Популярные <span>артисты и шоу</span></h2>
+            <div class="artists-grid" id="artistsGrid"></div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: БАННЕР "КАК ПОПАСТЬ В НАШУ БАЗУ" -->
+    <section class="cta-base-banner">
+        <div class="container">
+            <h2>Как попасть в нашу базу</h2>
+            <p>Для важных и неотложных переговоров — звоните</p>
+            <button class="btn btn-white" onclick="showApplicationForm()">Отправить заявку</button>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: ФОРМА ОБРАТНОЙ СВЯЗИ -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-wrapper">
+                <h2 class="section-title">Напишите <span>нам письмо</span></h2>
+                <form action="#" method="POST" class="feedback-form" id="feedbackForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Ваше имя *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Ваш Email *" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Ваш телефон">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Ваше сообщение *" required></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent">Я согласен с <a href="#">политикой обработки персональных данных</a></label>
+                    </div>
+                    <button type="submit" class="btn-submit">Отправить сообщение</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: ЧТО О НАС ГОВОРЯТ -->
+    <section class="reviews-section container">
+        <h2 class="section-title">Что о нас говорят</h2>
+        <p class="section-subtitle">Quisque posuere mollis ipsum et molestie. Fusce cursus, risus vel scelerisque porttitor, leo quam vulputate nibh, sit amet blandit erat magna.</p>
+        
+        <div class="reviews-grid" id="reviewsGrid"></div>
+
+        <div class="slider-controls">
+            <button class="slider-arrow arrow-left" onclick="prevReview()" aria-label="Предыдущий отзыв">←</button>
+            <button class="slider-arrow arrow-right" onclick="nextReview()" aria-label="Следующий отзыв">→</button>
+        </div>
+
+        <div class="brands-row" id="brandsRow"></div>
+    </section>
+
+    <!-- СЕКЦИЯ: ФИОЛЕТОВЫЙ БАННЕР -->
+    <section class="purple-cta-banner">
+        <div class="container purple-banner-content">
+            <h3>Присоединяйся к нашей большой команде нас уже <span id="artistsCount">123,000</span> артистов</h3>
+            <button class="btn-banner-white" onclick="showApplicationForm()">Отправить заявку</button>
+        </div>
+    </section>
+
+    <!-- ПОДВАЛ -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top-row">
+                <div class="footer-logo">Star Booking</div>
+                <div class="footer-auth-buttons">
+                    <a href="#" class="footer-btn-link" onclick="showRegisterDialog()">Регистрация</a>
+                    <a href="#" class="footer-btn-box" onclick="showLoginDialog()">Войти</a>
+                </div>
+            </div>
+
+            <div class="footer-grid" id="footerGrid"></div>
+
+            <div class="footer-bottom-row">
+                <p class="copyright">COPYRIGHT WOOCOMMERCE 2020 - <span>TERMS & CONDITIONS</span> <span>PRIVACY POLICY</span></p>
+                <div class="footer-socials" id="footerSocials"></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- СПОСОБ 2: ВСТРОЕННЫЙ (INLINE) ОБРАБОТЧИК (уже реализован в onclick атрибутах выше) -->
+    
+    <!-- СПОСОБ 3: БЛОЧНЫЙ СКРИПТ ВНУТРИ HTML -->
+    <script>
+        // Блочный JavaScript для инициализации после загрузки DOM
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('StarEvents сайт загружен (блочный скрипт)');
+            initCountdownTimer();
+        });
+        
+        // Функция с операторами if, while, break
+        function initCountdownTimer() {
+            let seconds = 5;
+            const timerElement = document.createElement('div');
+            timerElement.id = 'globalTimer';
+            timerElement.style.cssText = 'position:fixed; bottom:20px; right:20px; background:#FF5A36; color:white; padding:10px 15px; border-radius:30px; font-size:14px; z-index:1000; cursor:pointer;';
+            timerElement.innerHTML = '🎉 Акция заканчивается через: ' + seconds + ' сек';
+            timerElement.onclick = () => showPromoInfo();
+            document.body.appendChild(timerElement);
+            
+            // Демонстрация оператора while и break
+            let counter = seconds;
+            const interval = setInterval(function() {
+                counter--;
+                if (counter > 0) {
+                    timerElement.innerHTML = '🎉 Акция заканчивается через: ' + counter + ' сек';
+                } else {
+                    clearInterval(interval);
+                    timerElement.innerHTML = '🎉 Акция завершена!';
+                }
+            }, 1000);
+        }
+        
+        function showPromoInfo() {
+            // Демонстрация оператора switch
+            const currentHour = new Date().getHours();
+            let promoMessage = '';
+            switch(true) {
+                case currentHour < 12:
+                    promoMessage = '☀️ Утренняя акция: скидка 10% на ведущих!';
+                    break;
+                case currentHour < 18:
+                    promoMessage = '🎸 Дневная акция: бесплатный DJ-сет при заказе шоу!';
+                    break;
+                default:
+                    promoMessage = '✨ Вечерняя акция: дополнительные 2 часа фотосессии в подарок!';
+                    break;
+            }
+            alert(promoMessage);
+        }
+    </script>
+    
+    <!-- СПОСОБ 4: ВНЕШНИЙ СКРИПТ ДЛЯ ДЕМОНСТРАЦИИ (inline-demo.js) -->
+    <script src="js/inline-demo.js"></script>
+    
+</body>
+</html>

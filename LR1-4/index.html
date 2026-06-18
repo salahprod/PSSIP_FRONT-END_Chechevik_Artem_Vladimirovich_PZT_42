@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Майкл Джордан — Легенда баскетбола</title>
+   <!-- СПОСОБ 1: ИМПОРТИРОВАНИЕ (через link) -->
+    <link rel="stylesheet" type="text/css" href="fonts.css">
+    <!-- СПОСОБ 2: ВНЕШНИЙ ФАЙЛ -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+   <!-- СПОСОБ 3: ВНУТРЕННЯЯ ТАБЛИЦА СТИЛЕЙ -->
+    <style>
+          nb
+        footer a {
+            color: #ffd700;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            color: #ffffff;
+            background-color: #b22222;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+        
+        #form h2 {
+            color: #006400;
+            border-bottom: 3px dashed #006400;
+        }
+       
+    </style>
+</head>
+<body>       
+    <header>
+        <!-- СЕЛЕКТОР КЛАССА: main-title -->
+        <h1 class="main-title">Майкл Джордан</h1>
+        <!-- СЕЛЕКТОР КЛАССА: subtitle -->
+        <p class="subtitle">Легенда мирового баскетбола</p>
+    </header>
+    
+    <nav>
+        <!-- СЕЛЕКТОР КЛАССА: nav-menu -->
+        <ul class="nav-menu">
+            <!-- СЕЛЕКТОР КЛАССА: nav-item -->
+            <li class="nav-item">
+                <!-- СЕЛЕКТОР КЛАССА: nav-link -->
+                <a href="#bio" class="nav-link">Биография</a>
+            </li>
+            <li class="nav-item">
+                <a href="#stats" class="nav-link">Статистика</a>
+            </li>
+            <li class="nav-item">
+                <a href="#media" class="nav-link">Медиа</a>
+            </li>
+            <li class="nav-item">
+                <a href="#form" class="nav-link">Обратная связь</a>
+            </li>
+        </ul>
+    </nav>
+    
+    <main>
+        <!-- СЕЛЕКТОР ID: bio -->
+        <section id="bio" class="bio-section">
+            <!-- СЕЛЕКТОР КЛАССА: section-title -->
+            <h2 class="section-title">Биография</h2>
+            
+            <!-- СЕЛЕКТОР КЛАССА: bio-image -->
+            <!-- СЕЛЕКТОР АТРИБУТА: img[alt] (будет в CSS) -->
+            <img src="image/jordan.png" alt="Майкл Джордан в форме Chicago Bulls" width="300" class="bio-image">
+            
+            <!-- СЕЛЕКТОР КЛАССА: highlight-text -->
+            <p class="highlight-text">
+                <!-- СЕЛЕКТОР КЛАССА: bold-text -->
+                <strong class="bold-text">Майкл Джеффри Джордан</strong> — один из величайших игроков в истории НБА.
+            </p>
+            
+            <!-- СЕЛЕКТОР КЛАССА: regular-text -->
+            <p class="regular-text">Он выступал за 
+            <!-- СЕЛЕКТОР КЛАССА: external-link -->
+            <!-- СЕЛЕКТОР АТРИБУТА: a[href^="https"] (будет в CSS) -->
+            <a href="https://www.nba.com/bulls" target="_blank" class="external-link">Chicago Bulls</a> 
+            и выиграл 6 чемпионатов НБА.</p>
+            
+            <!-- СЕЛЕКТОР КЛАССА: subheading -->
+            <h3 class="subheading">Этапы карьеры:</h3>
+            <!-- СЕЛЕКТОР КЛАССА: numbered-list -->
+            <!-- СЕЛЕКТОР ТЕГА: ol (будет в CSS) -->
+            <ol class="numbered-list">
+                <!-- СЕЛЕКТОР КЛАССА: list-item -->
+                <!-- СЕЛЕКТОР ПСЕВДОКЛАССА: :hover (будет в CSS) -->
+                <li class="list-item">Дебют в НБА (1984)</li>
+                <li class="list-item">Первый чемпионский титул (1991)</li>
+                <li class="list-item">Второй трёхкратный чемпионский цикл (1996–1998)</li>
+                <li class="list-item">Возвращение в Washington Wizards (2001)</li>
+            </ol>
+            
+            <h3 class="subheading">Главные титулы (начиная с 3):</h3>
+            <!-- СЕЛЕКТОР КЛАССА: roman-list -->
+            <ol type="I" start="3" class="roman-list">
+                <li class="list-item">Шестикратный чемпион НБА</li>
+                <li class="list-item">Пятикратный MVP сезона</li>
+                <li class="list-item">Десятикратный лучший снайпер НБА</li>
+                <li class="list-item">Двукратный олимпийский чемпион</li>
+            </ol>
+            
+            <h3 class="subheading">Интересные факты:</h3>
+            <!-- СЕЛЕКТОР КЛАССА: bullet-list -->
+            <ul class="bullet-list">
+                <!-- СЕЛЕКТОР КЛАССА: fact-item -->
+                <!-- СЕЛЕКТОР ПСЕВДОЭЛЕМЕНТА: ::before (будет в CSS) -->
+                <li class="fact-item">14-кратный участник Матча всех звёзд</li>
+                <li class="fact-item">Член Зала славы баскетбола</li>
+                <li class="fact-item">Один из самых известных спортсменов мира</li>
+            </ul>
+        </section>
+        
+        <!-- СЕЛЕКТОР ID: stats -->
+        <section id="stats" class="stats-section">
+            <h2 class="section-title">Статистика в НБА</h2>
+            
+            <!-- СЕЛЕКТОР КЛАССА: stats-table -->
+            <!-- СЕЛЕКТОР ДОЧЕРНИЙ: table > caption (будет в CSS) -->
+            <!-- СЕЛЕКТОР СОСЕДНИЙ: th + th (будет в CSS) -->
+            <table border="1" cellspacing="0" cellpadding="8" class="stats-table">
+                <!-- СЕЛЕКТОР КЛАССА: table-caption -->
+                <caption class="table-caption">Средние показатели за карьеру</caption>
+                
+                <tr class="table-header">
+                    <!-- СЕЛЕКТОР КЛАССА: header-main -->
+                    <th colspan="4" class="header-main">Основная статистика</th>
+                </tr>
+                
+                <tr class="table-row">
+                    <!-- СЕЛЕКТОР КЛАССА: header-cell -->
+                    <th class="header-cell">Очки</th>
+                    <th class="header-cell">Подборы</th>
+                    <th class="header-cell">Передачи</th>
+                    <th class="header-cell">Перехваты</th>
+                </tr>
+                
+                <tr class="table-row">
+                    <!-- СЕЛЕКТОР КЛАССА: data-cell -->
+                    <td class="data-cell">30.1</td>
+                    <td class="data-cell">6.2</td>
+                    <td class="data-cell">5.3</td>
+                    <td class="data-cell">2.3</td>
+                </tr>
+                <tr class="table-row"> 
+                    <!-- СЕЛЕКТОР КЛАССА: footer-cell -->
+                    <td colspan="4" class="footer-cell">Спасибо за внимание</td> 
+                </tr>
+            </table>
+        </section>
+        
+        <!-- СЕЛЕКТОР ID: media -->
+        <section id="media" class="media-section">
+            <h2 class="section-title">Медиа</h2>
+            
+            <h3 class="subheading">Лучшие моменты</h3>
+            
+            <!-- СЕЛЕКТОР КЛАССА: video-frame -->
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/c6woN2eHwE4"
+                title="Michael Jordan Highlights"
+                allowfullscreen class="video-frame">
+            </iframe>
+            
+            <h3 class="subheading">Музыкальная заставка</h3>
+            <!-- СЕЛЕКТОР КЛАССА: audio-player -->
+            <audio controls class="audio-player">
+                <source src="audio/nba.mp3" type="audio/mpeg">
+                Ваш браузер не поддерживает аудио.
+            </audio>
+        </section>
+        
+    <!-- СПОСОБ 4: ВНУТРИТЕГОВОЕ ВКЛЮЧЕНИЕ (inline-стили) -->
+        <!-- СЕЛЕКТОР ID: form -->
+        <section id="form" class="form-section">
+            <!-- СЕЛЕКТОР КЛАССА: form-title -->
+            <!-- INLINE СТИЛИ: style="..." -->
+            <h2 style="text-align: center; color: darkred; border-bottom: 2px solid darkred; padding-bottom: 10px;" class="form-title">📬 Обратная связь</h2>
+            
+            <!-- СЕЛЕКТОР КЛАССА: contact-form -->
+            <form action="#" method="post" class="contact-form">
+                <!-- СЕЛЕКТОР КЛАССА: form-fieldset -->
+                <fieldset class="form-fieldset">
+                    <!-- СЕЛЕКТОР КЛАССА: fieldset-legend -->
+                    <legend class="fieldset-legend">Личная информация</legend>
+                    
+                    <!-- СЕЛЕКТОР КЛАССА: form-label -->
+                    <label for="name" class="form-label">Имя:</label><br>
+                    <!-- СЕЛЕКТОР КЛАССА: form-input -->
+                    <!-- СЕЛЕКТОР АТРИБУТА: input[type="text"] (будет в CSS) -->
+                    <input type="text" id="name" name="name" required class="form-input"><br><br>
+                    
+                    <label for="surname" class="form-label">Фамилия:</label><br>
+                    <input type="text" id="surname" name="surname" class="form-input"><br><br>
+                    
+                    <label for="email" class="form-label">Email:</label><br>
+                    <input type="email" id="email" name="email" required class="form-input"><br><br>
+                    
+                    <label for="tel" class="form-label">Телефон:</label><br>
+                    <input type="tel" id="tel" name="tel" class="form-input"><br><br>
+                    
+                    <label for="birth" class="form-label">Дата рождения:</label><br>
+                    <input type="date" id="birth" name="birth" class="form-input"><br><br>
+                </fieldset>
+                
+                <fieldset class="form-fieldset">
+                    <legend class="fieldset-legend">Оценка игрока</legend>
+                    
+                    <!-- СЕЛЕКТОР КЛАССА: fieldset-text -->
+                    <p class="fieldset-text">Как вы оцениваете Майкла Джордана?</p>
+                    <!-- СЕЛЕКТОР КЛАССА: radio-input -->
+                    <input type="radio" name="rate" value="excellent" class="radio-input"> 
+                    <!-- СЕЛЕКТОР КЛАССА: radio-label -->
+                    <span class="radio-label">Легенда</span><br>
+                    <input type="radio" name="rate" value="great" class="radio-input"> 
+                    <span class="radio-label">Отличный игрок</span><br>
+                    <input type="radio" name="rate" value="good" class="radio-input"> 
+                    <span class="radio-label">Хороший</span><br><br>
+                    
+                    <label for="skill" class="form-label">Уровень мастерства (0–100):</label><br>
+                    <!-- СЕЛЕКТОР КЛАССА: range-input -->
+                    <input type="range" id="skill" name="skill" min="0" max="100" class="range-input"><br><br>
+                </fieldset>
+                
+                <fieldset class="form-fieldset">
+                    <legend class="fieldset-legend">Предпочтения</legend>
+                    
+                    <p class="fieldset-text">Ваш любимый клуб:</p>
+                    <!-- СЕЛЕКТОР КЛАССА: select-input -->
+                    <select name="team" class="select-input">
+                        <!-- СЕЛЕКТОР КЛАССА: select-option -->
+                        <option class="select-option">Chicago Bulls</option>
+                        <option class="select-option">Washington Wizards</option>
+                        <option class="select-option">Los Angeles Lakers</option>
+                        <option class="select-option">Golden State Warriors</option>
+                    </select><br><br>
+                    
+                    <p class="fieldset-text">Что вам нравится в его игре?</p>
+                    <!-- СЕЛЕКТОР КЛАССА: checkbox-input -->
+                    <input type="checkbox" name="like" value="dunks" class="checkbox-input"> 
+                    <!-- СЕЛЕКТОР КЛАССА: checkbox-label -->
+                    <span class="checkbox-label">Данки</span><br>
+                    <input type="checkbox" name="like" value="shooting" class="checkbox-input"> 
+                    <span class="checkbox-label">Броски</span><br>
+                    <input type="checkbox" name="like" value="defense" class="checkbox-input"> 
+                    <span class="checkbox-label">Защита</span><br>
+                    <input type="checkbox" name="like" value="leadership" class="checkbox-input"> 
+                    <span class="checkbox-label">Лидерство</span><br><br>
+                </fieldset>
+                
+                <fieldset class="form-fieldset">
+                    <legend class="fieldset-legend">Дополнительно</legend>
+                    
+                    <label for="photo" class="form-label">Загрузить фото:</label><br>
+                    <!-- СЕЛЕКТОР КЛАССА: file-input -->
+                    <input type="file" id="photo" name="photo" class="file-input"><br><br>
+                    
+                    <label for="color" class="form-label">Любимый цвет формы:</label><br>
+                    <!-- СЕЛЕКТОР КЛАССА: color-input -->
+                    <input type="color" id="color" name="color" class="color-input"><br><br>
+                    
+                    <label for="message" class="form-label">Комментарий:</label><br>
+                    <!-- СЕЛЕКТОР КЛАССА: textarea-input -->
+                    <textarea id="message" name="message" rows="4" cols="50" class="textarea-input"></textarea><br><br>
+                </fieldset>
+                
+                <!-- СЕЛЕКТОР КЛАССА: submit-button -->
+                <input type="submit" value="Отправить" class="submit-button">
+                <!-- СЕЛЕКТОР КЛАССА: reset-button -->
+                <input type="reset" value="Очистить" class="reset-button">
+            </form>
+        </section>
+    </main>
+    
+    <!-- СЕЛЕКТОР КЛАССА: page-footer -->
+    <footer class="page-footer">
+        <!-- СЕЛЕКТОР КЛАССА: copyright -->
+        <p class="copyright">&copy; 2026 Тематический сайт о Майкле Джордане</p>
+        <!-- СЕЛЕКТОР КЛАССА: back-to-top -->
+        <p><a href="#bio" class="back-to-top">Наверх</a></p>
+    </footer>
+</body>
+</html>

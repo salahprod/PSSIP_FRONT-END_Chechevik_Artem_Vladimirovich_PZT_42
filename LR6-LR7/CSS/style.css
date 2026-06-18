@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1e2a2a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', 'Inter', system-ui, sans-serif;
+    padding: 40px 20px;
+}
+
+/* Фиксированный контейнер — 900px */
+.container {
+    background: #f5f0e0;
+    padding: 40px 35px;
+    border-radius: 32px;
+    width: 900px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.3);
+}
+
+/* При ширине экрана меньше 940px появляется горизонтальная прокрутка */
+@media (max-width: 940px) {
+    body {
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+}
+
+.flex-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+}
+
+.block {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.1);
+    border: 2px solid #c9bc88;
+    transition: all 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #3a5a4a;
+}
+
+.block:hover {
+    transform: scale(0.98);
+    background: #fffefa;
+}
+
+/* 1-й ряд: один длинный блок — фиксированная ширина 830px (900 - 35*2 отступов) */
+.block-long {
+    width: 830px;
+    height: 100px;
+}
+
+/* 2-й ряд: 3 блока — каждый фиксированной ширины */
+.block-high {
+    width: 263px;
+    height: 220px;
+    font-size: 2.2rem;
+}
+
+/* 3-й ряд: 2 блока — каждый фиксированной ширины */
+.block-wide {
+    width: 405px;
+    height: 300px;
+    font-size: 1.8rem;
+}
+
+/* 4-й ряд: 3 блока — каждый фиксированной ширины */
+.block-triple {
+    width: 263px;
+    height: 100px;
+}
+
+/* Планшет (ширина окна до 940px) */
+@media (max-width: 940px) {
+    body {
+        padding: 30px 15px;
+    }
+}
+
+/* При ширине окна до 800px - 6-й блок пропадает, 5-й растягивается */
+@media (max-width: 800px) {
+    .block-six {
+        display: none;
+    }
+    
+    .row-three {
+        gap: 0;
+    }
+    
+    /* 5-й блок становится шире на всю доступную ширину контейнера */
+    .block-five {
+        width: 830px;
+    }
+}
+
+/* При ширине окна до 650px - уменьшаем размеры блоков */
+@media (max-width: 650px) {
+    .container {
+        padding: 25px 20px;
+        width: 700px;
+    }
+    
+    .flex-grid {
+        gap: 20px;
+    }
+    
+    .row {
+        gap: 15px;
+    }
+    
+    .block-long {
+        width: 660px;
+        height: 80px;
+    }
+    
+    .block-high {
+        width: 210px;
+        height: 180px;
+        font-size: 2rem;
+    }
+    
+    .block-wide {
+        width: 322px;
+        height: 200px;
+        font-size: 1.6rem;
+    }
+    
+    .block-triple {
+        width: 210px;
+        height: 80px;
+    }
+    
+    .block {
+        font-size: 1.6rem;
+    }
+    
+    /* При пропадании 6-го блока, 5-й занимает всю ширину */
+    .block-five {
+        width: 660px;
+    }
+}
+
+/* При ширине окна до 550px */
+@media (max-width: 550px) {
+    .container {
+        padding: 20px 15px;
+        width: 500px;
+    }
+    
+    .flex-grid {
+        gap: 15px;
+    }
+    
+    .row {
+        gap: 10px;
+    }
+    
+    .block-long {
+        width: 470px;
+        height: 60px;
+    }
+    
+    .block-high {
+        width: 150px;
+        height: 140px;
+        font-size: 1.8rem;
+    }
+    
+    .block-wide {
+        width: 230px;
+        height: 150px;
+        font-size: 1.4rem;
+    }
+    
+    .block-triple {
+        width: 150px;
+        height: 60px;
+    }
+    
+    .block {
+        font-size: 1.4rem;
+        border-radius: 18px;
+    }
+    
+    .block-five {
+        height: 150px;
+        width: 470px;
+    }
+}
+
+/* При ширине окна до 450px */
+@media (max-width: 450px) {
+    .container {
+        width: 380px;
+        padding: 15px 12px;
+    }
+    
+    .flex-grid {
+        gap: 12px;
+    }
+    
+    .row {
+        gap: 8px;
+    }
+    
+    .block-long {
+        width: 356px;
+        height: 50px;
+    }
+    
+    .block-high {
+        width: 113px;
+        height: 110px;
+        font-size: 1.5rem;
+    }
+    
+    .block-wide {
+        width: 174px;
+        height: 120px;
+        font-size: 1.2rem;
+    }
+    
+    .block-triple {
+        width: 113px;
+        height: 50px;
+    }
+    
+    .block {
+        font-size: 1.2rem;
+        border-radius: 14px;
+    }
+    
+    .block-five {
+        height: 120px;
+        width: 356px;
+    }
+}

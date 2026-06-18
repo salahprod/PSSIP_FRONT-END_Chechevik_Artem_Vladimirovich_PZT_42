@@ -1,0 +1,388 @@
+/* ==========================================================================
+   Базовые настройки сетки (Резиновая адаптивность на процентах)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1e2a2a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', 'Inter', system-ui, sans-serif;
+    padding: 20px;
+}
+
+/* Максимальная ширина контейнера — 900px, при уменьшении экрана он сжимается */
+.container {
+    background: #f5f0e0;
+    padding: 30px 25px;
+    border-radius: 32px;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.3);
+}
+
+.flex-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Ряды теперь гибкие и могут переносить блоки при нехватке места */
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Базовый адаптивный класс для всех блоков */
+.block {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.1);
+    border: 2px solid #c9bc88;
+    transition: all 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #3a5a4a;
+}
+
+.block:hover {
+    transform: scale(0.99);
+    background: #fffefa;
+}
+
+/* 1-й ряд: занимает 100% ширины */
+.block-long {
+    width: 100%;
+    height: 90px;
+}
+
+/* 2-й ряд: 3 блока делят ширину по ~31.5% с учетом gap */
+.block-high {
+    width: calc((100% - (15px * 2)) / 3);
+    height: 200px;
+}
+
+/* 3-й ряд: 2 блока делят ширину ровно пополам */
+.block-wide {
+    width: calc((100% - 15px) / 2);
+    min-height: 290px; /* Используем min-height вместо жесткого height, чтобы контент не выпадал */
+}
+
+/* 4-й ряд: 3 небольших блока */
+.block-triple {
+    width: calc((100% - (15px * 2)) / 3);
+    height: 90px;
+}
+
+
+/* ==========================================================================
+   Стили для внутренних элементов (Форма и Карточка)
+   ========================================================================== */
+
+.content-block {
+    display: block !important; 
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #333;
+    text-align: left;
+}
+
+/* --- БЛОК 5: Контактная форма --- */
+.form-header {
+    background: #b11e3b;
+    color: #fff;
+    text-align: center;
+    padding: 6px;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.contact-form {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.form-title {
+    font-size: 0.8rem;
+    background: #e9e9e9;
+    padding: 4px 8px;
+    border-bottom: 1px solid #ddd;
+    margin: -8px -8px 8px -8px;
+    color: #555;
+    font-weight: 600;
+}
+
+.form-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.contact-form input, 
+.contact-form select, 
+.contact-form textarea {
+    width: 100%;
+    padding: 5px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-family: inherit;
+    outline: none;
+}
+
+.contact-form textarea {
+    height: 45px;
+    resize: none;
+    margin-bottom: 6px;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.65rem;
+    color: #666;
+    cursor: pointer;
+}
+
+.btn-submit {
+    background: #2b5c8f;
+    color: #fff;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* --- БЛОК 6: Карточка SafeVision Pro --- */
+.target-product-card {
+    background: #ffffff !important;
+}
+
+.main-product-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 10px;
+}
+
+.product-layout {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+}
+
+/* Левая секция: Фото */
+.layout-left {
+    flex: 0 0 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.main-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.badges {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 2;
+}
+
+.badge {
+    font-size: 0.5rem;
+    font-weight: bold;
+    color: #fff;
+    padding: 1px 4px;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+
+.badge-hit { background: #ff9800; }
+.badge-action { background: #e61c3e; }
+
+.thumbs-gallery {
+    display: flex;
+    gap: 3px;
+    width: 100%;
+}
+
+.thumb-item {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thumb-item.active { border-color: #e61c3e; }
+.thumb-item img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+/* Центральная секция: Характеристики */
+.layout-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 4px;
+}
+
+.meta-articul {
+    font-size: 0.6rem;
+    color: #888888;
+    margin-bottom: 4px;
+}
+
+.spec-table {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.spec-row {
+    display: flex;
+    font-size: 0.65rem;
+}
+
+.spec-label {
+    color: #777777;
+    width: 85px;
+    flex-shrink: 0;
+}
+
+.spec-value {
+    color: #111111;
+    font-weight: 500;
+}
+
+.all-specs-link {
+    font-size: 0.65rem;
+    color: #e61c3e;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: auto;
+    padding-top: 4px;
+}
+
+/* Правая секция: Белая плашка цены */
+.layout-right {
+    flex: 0 0 35%;
+}
+
+.purchase-box {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 8px;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.price-row .num { font-size: 1.1rem; font-weight: 700; }
+.price-row .currency { font-size: 0.75rem; }
+.status-stock { font-size: 0.6rem; color: #ff3366; font-weight: 600; margin-bottom: 4px; }
+.delivery-info { font-size: 0.55rem; color: #666666; line-height: 1.2; margin-bottom: 6px; }
+
+.btn-add-to-cart {
+    background: #e61c3e;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 5px 0;
+    font-size: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: auto; /* Прижимает кнопку вниз плашки */
+}
+
+
+/* ==========================================================================
+   Медиа-запросы: Перестроение блоков при уменьшении экрана
+   ========================================================================== */
+
+/* На планшетах (до 768px): Блоки формы и карточки встают друг под друга на 100% ширины */
+@media (max-width: 768px) {
+    .block-high {
+        width: calc((100% - 15px) / 2); /* Блоки 2,3,4 перестраиваются по два в ряд */
+    }
+    
+    .block-wide {
+        width: 100%; /* Форма и карточка занимают полную ширину и больше не сжимаются в проход */
+        min-height: auto;
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .block-triple {
+        width: calc((100% - 15px) / 2);
+    }
+}
+
+/* На мобильных устройствах (до 480px): Абсолютно все блоки встают в один вертикальный ряд */
+@media (max-width: 480px) {
+    .block-high, .block-wide, .block-triple {
+        width: 100%;
+        height: auto;
+        min-height: 110px;
+    }
+
+    .product-layout {
+        flex-direction: column; /* Карточка товара выстраивается вертикально внутри блока */
+        gap: 15px;
+    }
+
+    .layout-left, .layout-right {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+    
+    .spec-table {
+        margin-bottom: 10px;
+    }
+}

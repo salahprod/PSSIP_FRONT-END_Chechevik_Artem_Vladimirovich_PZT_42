@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вариант №13</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Задание №1: Скрипт в Head, функция будет вызвана по кнопке -->
+    <script>
+        // Задание №1: Работа с объектом Date (вывод в диалоговое окно)
+        function showMonthYear() {
+            const currentDate = new Date();
+            // Формат: месяц-год (например, June-2026)
+            const monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+            const month = monthNames[currentDate.getMonth()];
+            const year = currentDate.getFullYear();
+            alert(`Дата в формате месяц-год: ${month}-${year}`);
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Вариант №13</h1>
+        
+
+        <!-- ЗАДАНИЕ №1 -->
+        <section class="task">
+            <h2>Задание 1</h2>
+            <p>Вывести дату в формате месяц-год в диалоговое окно.</p>
+            <button onclick="showMonthYear()">Показать год</button>
+        </section>
+
+        <!-- ЗАДАНИЕ №2 -->
+        <section class="task">
+            <h2>Задание 2</h2>
+            <p>Вывести группу и курс 10 раз.</p>
+            <div id="groupOutput" class="output-box"></div>
+            <!-- Скрипт размещен в Body (задание №2) -->
+            <script>
+                // Задание №2: Работа с циклом for
+                (function() {
+                    const group = "ПЗТ-42"; 
+                    const course = "3 курс"; 
+                    const container = document.getElementById('groupOutput');
+                    let outputHtml = '';
+                    for (let i = 1; i <= 10; i++) {
+                        outputHtml += `<p>${i}. ${group}, ${course}</p>`;
+                    }
+                    container.innerHTML = outputHtml;
+                })();
+            </script>
+        </section>
+
+        <!-- ЗАДАНИЕ №3 -->
+        <section class="task">
+            <h2>Задание 3</h2>
+            <p>Массив из 10 целых элементов. Среднее арифметическое:</p>
+            <div id="arrayOutput" class="output-box"></div>
+            <!-- Скрипт размещен в Body (задание №3) -->
+            <script>
+                // Задание №3: Работа с объектом Array
+                (function() {
+                    // Формируем массив из 10 случайных целых чисел от 1 до 100 (для наглядности)
+                    const arr = [];
+                    for (let i = 0; i < 10; i++) {
+                        arr.push(Math.floor(Math.random() * 100) + 1);
+                    }
+                    // Подсчет среднего арифметического
+                    let sum = 0;
+                    for (let i = 0; i < arr.length; i++) {
+                        sum += arr[i];
+                    }
+                    const average = sum / arr.length;
+
+                    const container = document.getElementById('arrayOutput');
+                    container.innerHTML = `
+                        <p><strong>Массив:</strong> [${arr.join(', ')}]</p>
+                        <p><strong>Сумма элементов:</strong> ${sum}</p>
+                        <p><strong>Среднее арифметическое:</strong> ${average.toFixed(2)}</p>
+                    `;
+                })();
+            </script>
+        </section>
+
+        <!-- ЗАДАНИЕ №4 -->
+        <section class="task">
+            <h2>Задание 4</h2>
+            <p>Площадь круга заданного радиуса.</p>
+            <div id="mathOutput" class="output-box"></div>
+            <!-- Скрипт подключается из внешнего файла (задание №4) -->
+            <script src="script.js"></script>
+        </section>
+
+        <!-- ЗАДАНИЕ №5 -->
+        <section class="task">
+            <h2>Задание 5</h2>
+            <p>Работа со строковыми переменными</p>
+            <div id="stringOutput" class="output-box"></div>
+            <!-- Скрипт размещен в Body (задание №5) -->
+            <script>
+                // Задание №5: Работа со строками
+                (function() {
+                    const s1 = "Чещевик"; 
+                    const s2 = "ул. Ленина, д. 1, кв. 88"; 
+
+                    const lenS1 = s1.length;
+                    const concatenated = s1 + " " + s2; // сцепление с пробелом
+                    const s2Upper = s2.toUpperCase();
+
+                    const container = document.getElementById('stringOutput');
+                    container.innerHTML = `
+                        <p><strong>s1 (Фамилия):</strong> "${s1}"</p>
+                        <p><strong>s2 (Адрес):</strong> "${s2}"</p>
+                        <p><strong>1. Длина строки s1:</strong> ${lenS1} символов</p>
+                        <p><strong>2. Сцепление s1 и s2:</strong> "${concatenated}"</p>
+                        <p><strong>3. s2 в верхнем регистре:</strong> "${s2Upper}"</p>
+                    `;
+                })();
+            </script>
+        </section>
+
+    </div>
+
+</body>
+</html>

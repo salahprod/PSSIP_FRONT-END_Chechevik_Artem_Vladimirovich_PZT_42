@@ -1,0 +1,203 @@
+/* ФИКСИРОВАННАЯ ВЕРСТКА
+   Ширина контейнера строго фиксирована (900px) и не меняется до 900px
+   Использовать отдельно, заменив styles.css на fixed.css в index.html
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1e2a2a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', 'Inter', system-ui, sans-serif;
+    padding: 40px 20px;
+}
+
+/* ФИКСИРОВАННАЯ ширина контейнера - не резиновая */
+.container {
+    background: #f5f0e0;
+    padding: 40px 35px;
+    border-radius: 32px;
+    width: 900px;           /* фиксированная ширина */
+    box-shadow: 0 25px 45px rgba(0,0,0,0.3);
+}
+
+/* При ширине экрана меньше 900px - горизонтальная прокрутка */
+@media (max-width: 980px) {
+    body {
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+}
+
+.flex-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+}
+
+.block {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.1);
+    border: 2px solid #c9bc88;
+    transition: all 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #3a5a4a;
+}
+
+.block:hover {
+    transform: scale(0.98);
+    background: #fffefa;
+}
+
+.block-long {
+    width: 100%;
+    height: 100px;
+}
+
+.block-high {
+    flex: 1;
+    height: 220px;
+    font-size: 2.2rem;
+}
+
+.block-wide {
+    flex: 1;
+    height: 300px;
+    font-size: 1.8rem;
+    flex-basis: 200px;
+    min-width: 200px;
+}
+
+.block-triple {
+    flex: 1;
+    height: 100px;
+}
+
+/* Адаптивность для фиксированной версии (при ширине экрана меньше 900px -
+   блок 6 пропадает, блок 5 растягивается) */
+@media (max-width: 800px) {
+    .block-six {
+        display: none;
+    }
+    
+    .row-three {
+        gap: 0;
+    }
+    
+    .block-five {
+        width: 100%;
+        flex: none;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 25px;
+    }
+    .flex-grid {
+        gap: 20px;
+    }
+    .row {
+        gap: 15px;
+    }
+    .block-long {
+        height: 80px;
+    }
+    .block-high {
+        height: 180px;
+        font-size: 2rem;
+    }
+    .block-wide {
+        height: 200px;
+        font-size: 1.6rem;
+    }
+    .block-triple {
+        height: 80px;
+    }
+    .block {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 15px;
+    }
+    .flex-grid {
+        gap: 15px;
+    }
+    .row {
+        gap: 10px;
+    }
+    .block-long {
+        height: 60px;
+    }
+    .block-high {
+        height: 140px;
+        font-size: 1.8rem;
+    }
+    .block-wide {
+        height: 150px;
+        font-size: 1.4rem;
+    }
+    .block-triple {
+        height: 60px;
+    }
+    .block {
+        font-size: 1.4rem;
+        border-radius: 18px;
+    }
+    .block-five {
+        height: 150px;
+    }
+}
+
+@media (max-width: 380px) {
+    .flex-grid {
+        gap: 12px;
+    }
+    .row {
+        gap: 8px;
+    }
+    .block-long {
+        height: 50px;
+    }
+    .block-high {
+        height: 110px;
+        font-size: 1.5rem;
+    }
+    .block-wide {
+        height: 120px;
+        font-size: 1.2rem;
+    }
+    .block-triple {
+        height: 50px;
+    }
+    .block {
+        font-size: 1.2rem;
+        border-radius: 14px;
+    }
+    .block-five {
+        height: 120px;
+    }
+}

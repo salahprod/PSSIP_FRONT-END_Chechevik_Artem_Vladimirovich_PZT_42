@@ -1,0 +1,122 @@
+/* РЕЗИНОВАЯ ВЁРСТКА
+   Ширина контейнера — 90vw, но не более 1200px
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1e2a2a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', 'Inter', system-ui, sans-serif;
+    padding: 5vw 3vw;
+}
+
+/* Резиновый контейнер — ширина в процентах от экрана */
+.container {
+    background: #f5f0e0;
+    padding: 4vw 3.5vw;
+    border-radius: 32px;
+    width: 90vw;
+    max-width: 1200px;
+    min-width: 280px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.3);
+}
+
+.flex-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    justify-content: center;
+}
+
+.block {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.1);
+    border: 2px solid #c9bc88;
+    transition: all 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(1rem, 5vw, 2.2rem);
+    font-weight: 800;
+    color: #3a5a4a;
+}
+
+.block:hover {
+    transform: scale(0.98);
+    background: #fffefa;
+}
+
+.block-long {
+    width: 100%;
+    height: clamp(60px, 12vw, 140px);
+}
+
+.block-high {
+    flex: 1;
+    height: clamp(120px, 22vw, 260px);
+    font-size: clamp(1.2rem, 5vw, 2.2rem);
+}
+
+.block-wide {
+    flex: 1;
+    height: clamp(100px, 20vw, 320px);
+    font-size: clamp(1rem, 4vw, 1.8rem);
+    flex-basis: 200px;
+    min-width: clamp(90px, 20vw, 200px);
+}
+
+.block-triple {
+    flex: 1;
+    height: clamp(50px, 10vw, 120px);
+}
+
+/* Резиновая адаптивность: при ширине экрана меньше 620px
+   6-й блок пропадает, 5-й растягивается */
+@media (max-width: 620px) {
+    .block-six {
+        display: none;
+    }
+    
+    .row-three {
+        gap: 0;
+    }
+    
+    .block-five {
+        width: 100%;
+        flex: none;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 4vw 4vw;
+    }
+    
+    .flex-grid {
+        gap: 4vw;
+    }
+    
+    .row {
+        gap: 3vw;
+    }
+    
+    .block {
+        border-radius: 18px;
+    }
+}

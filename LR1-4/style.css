@@ -1,0 +1,973 @@
+/* 1. УНИВЕРСАЛЬНЫЙ СЕЛЕКТОР (*)*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 2. СЕЛЕКТОР ТЕГА (по названию элемента)*/
+body {
+    font-family: 'Montserrat', 'Roboto Slab', 'Oswald', Arial, sans-serif; /* 1. ПОДКЛЮЧЕНИЕ НЕСТАНДАРТНЫХ ШРИФТОВ */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* 2. ГРАДИЕНТ ДЛЯ ФОНА СТРАНИЦЫ */
+    color: #333; /* 2. ЦВЕТ ТЕКСТА */
+    line-height: 1.6;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 48px;
+    color: #ffffff; /* 2. ЦВЕТ ТЕКСТА */
+    text-shadow: 4px 4px 0 #b22222; /* 2. ТЕНЬ ТЕКСТА */
+}
+
+h2 {
+    font-size: 2.2em;
+    color: #ffffff; /* 2. ЦВЕТ ТЕКСТА */
+    text-shadow: 3px 3px 0 #b22222; /* 2. ТЕНЬ ТЕКСТА */
+    margin: 30px 0 20px 0;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: #2c3e50; /* 2. ЦВЕТ ТЕКСТА */
+    margin: 25px 0 15px 0;
+    padding-left: 15px;
+    border-left: 5px solid #b22222; /* 2. ЦВЕТ ГРАНИЦЫ */
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 3. СЕЛЕКТОР КЛАССА (.classname)                    */
+.main-title {
+    background: linear-gradient(45deg, #ffd700, #ffa500); /* 5. ГРАДИЕНТ */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    animation: bounce 2s infinite ease-in-out; /* 9. АНИМАЦИЯ */
+}
+
+.subtitle {
+    font-size: 1.5em;
+    color: #fff; /* 2. ЦВЕТ ТЕКСТА */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* 2. ТЕНЬ ТЕКСТА */
+}
+
+.nav-menu {
+    background: rgba(0, 0, 0, 0.8); /* 2. ЦВЕТ ФОНА */
+    padding: 15px 30px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.nav-item {
+    display: inline-block;
+    margin: 0 20px;
+    list-style: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white; /* 2. ЦВЕТ ТЕКСТА */
+    font-weight: 600; /* 3. ЖИРНЫЙ ТЕКСТ */
+    padding: 8px 15px;
+    border-radius: 25px;
+    transition: all 0.3s; /* 9. ТРАНСФОРМАЦИЯ */
+}
+
+.nav-link:hover { /* 4. HOVER-ЭФФЕКТ */
+    background: #ffd700; /* 4. HOVER-ЭФФЕКТ */
+    color: #8b0000; /* 4. HOVER-ЭФФЕКТ */
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+}
+
+.bio-image {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid #fff; /* 5. БОРДЕР */
+    box-shadow: 0 20px 30px -10px rgba(0,0,0,0.3); /* 5. ТЕНЬ */
+    border-radius: 20px; /* 5. СКРУГЛЕНИЕ УГЛОВ */
+    transition: all 0.5s; /* 9. ТРАНСФОРМАЦИЯ */
+}
+
+.bio-image:hover { /* 5. HOVER-ЭФФЕКТ ДЛЯ ИЗОБРАЖЕНИЯ */
+    transform: rotate(2deg) scale(1.05); /* 9. ТРАНСФОРМАЦИЯ */
+    border-radius: 30px 10px; /* 5. ИЗМЕНЕНИЕ СКРУГЛЕНИЯ */
+    box-shadow: 0 30px 40px -10px #b22222; /* 5. ИЗМЕНЕНИЕ ТЕНИ */
+}
+
+.highlight-text {
+    font-size: 1.2em;
+    background: rgba(255, 215, 0, 0.1); /* 2. ЦВЕТ ФОНА */
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.bold-text {
+    font-weight: 900; /* 3. ЖИРНЫЙ ТЕКСТ */
+    color: #b22222; /* 2. ЦВЕТ ТЕКСТА */
+}
+
+.regular-text {
+    color: #444; /* 2. ЦВЕТ ТЕКСТА */
+}
+
+.external-link {
+    color: #c43e00; /* 2. ЦВЕТ ТЕКСТА */
+    font-weight: 600; /* 3. ЖИРНЫЙ ТЕКСТ */
+    position: relative;
+    padding-right: 20px;
+}
+
+.subheading {
+    font-size: 1.5em;
+    color: #2c3e50; /* 2. ЦВЕТ ТЕКСТА */
+    margin: 25px 0 15px 0;
+    padding-left: 15px;
+    border-left: 5px solid #b22222; /* 2. ЦВЕТ ГРАНИЦЫ */
+}
+
+.numbered-list, .roman-list {
+    list-style-type: none; /* 6. УБИРАЕМ СТАНДАРТНЫЕ МАРКЕРЫ */
+    counter-reset: item;
+    padding-left: 0;
+    margin: 20px 0;
+}
+
+.list-item {
+    counter-increment: item;
+    margin-bottom: 15px;
+    padding: 12px 20px;
+    background: linear-gradient(45deg, #f8f9fa, #ffffff); /* 2. ГРАДИЕНТ ДЛЯ ФОНА */
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08); /* 2. ТЕНЬ */
+    position: relative;
+    padding-left: 50px;
+    font-weight: 500; /* 3. ПОЛУЖИРНЫЙ ТЕКСТ */
+    border-left: 4px solid #b22222; /* 2. ЦВЕТ ГРАНИЦЫ */
+    transition: all 0.3s ease; /* 9. ТРАНСФОРМАЦИЯ */
+}
+
+.list-item:hover { /* 4. HOVER-ЭФФЕКТ */
+    transform: translateX(10px); /* 9. ТРАНСФОРМАЦИЯ */
+    box-shadow: 0 5px 15px rgba(178, 34, 34, 0.2);
+    border-left-width: 6px;
+}
+
+.roman-list .list-item {
+    border-left-color: #4a90e2; /* 2. ЦВЕТ ГРАНИЦЫ */
+    background: linear-gradient(45deg, #f0f7ff, #ffffff); /* 2. ГРАДИЕНТ ДЛЯ ФОНА */
+}
+
+.list-link {
+    text-decoration: none;
+    color: #b22222; /* 2. ЦВЕТ ТЕКСТА */
+    font-weight: 600; /* 3. ЖИРНЫЙ ТЕКСТ */
+    transition: all 0.3s ease; /* 9. ТРАНСФОРМАЦИЯ */
+    display: inline-block;
+    padding: 2px 5px;
+}
+
+.list-link:hover { /* 4. HOVER-ЭФФЕКТ */
+    color: #ffd700; /* 4. HOVER-ЭФФЕКТ */
+    background-color: #b22222; /* 4. HOVER-ЭФФЕКТ */
+    border-radius: 5px;
+    transform: translateX(5px); /* 9. ТРАНСФОРМАЦИЯ */
+}
+
+.bullet-list {
+    list-style-type: none; /* 6. УБИРАЕМ СТАНДАРТНЫЕ МАРКЕРЫ */
+    padding-left: 0;
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.fact-item {
+    background: rgba(255, 255, 255, 0.9); /* 2. ЦВЕТ ФОНА */
+    padding: 15px 20px 15px 45px;
+    border-radius: 50px; /* 5. СКРУГЛЕНИЕ */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* 2. ТЕНЬ */
+    position: relative;
+    font-weight: 600; /* 3. ЖИРНЫЙ ТЕКСТ */
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.5);
+    transition: all 0.3s; /* 9. ТРАНСФОРМАЦИЯ */
+}
+
+.fact-item:hover { /* 4. HOVER-ЭФФЕКТ */
+    transform: scale(1.02); /* 9. ТРАНСФОРМАЦИЯ */
+    background: white; /* 2. ЦВЕТ ФОНА */
+    box-shadow: 0 8px 25px rgba(178, 34, 34, 0.2);
+}
+
+.fact-item::before { /* 6. СОБСТВЕННЫЙ ГРАФИЧЕСКИЙ МАРКЕР */
+    content: "🏀";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3em;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: separate; /* 7. СТИЛИЗАЦИЯ ТАБЛИЦ */
+    border-spacing: 0;
+    border-radius: 15px; /* 7. СКРУГЛЕНИЕ УГЛОВ ТАБЛИЦЫ */
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* 7. ТЕНЬ ТАБЛИЦЫ */
+    background: white; /* 7. ФОН ТАБЛИЦЫ */
+}
+
+.table-caption {
+    font-size: 1.2em;
+    font-weight: bold; /* 3. ЖИРНЫЙ ТЕКСТ */
+    color: #b22222; /* 2. ЦВЕТ ТЕКСТА */
+    margin-bottom: 15px;
+    text-transform: uppercase; /* 3. ЗАГЛАВНЫЕ БУКВЫ */
+    letter-spacing: 2px; /* 3. МЕЖБУКВЕННЫЙ ИНТЕРВАЛ */
+}
+
+.stats-table th {
+    background: linear-gradient(135deg, #2c3e50, #3498db); /* 7. ГРАДИЕНТ ДЛЯ ФОНА ЯЧЕЕК */
+    color: white; /* 2. ЦВЕТ ТЕКСТА */
+    font-weight: 600; /* 3. ЖИРНЫЙ ТЕКСТ */
+    text-transform: uppercase; /* 3. ЗАГЛАВНЫЕ БУКВЫ */
+    letter-spacing: 1px;
+    padding: 15px;
+    border: 1px solid #fff; /* 7. БОРДЕРЫ */
+}
+
+.stats-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ecf0f1; /* 7. БОРДЕРЫ */
+    color: #2c3e50; /* 2. ЦВЕТ ТЕКСТА */
+}
+
+.stats-table tr:last-child td {
+    border-bottom: none;
+}
+
+#stats tr:nth-child(even) { /* 7. ЧЕРЕДОВАНИЕ ЦВЕТА СТРОК */
+    background: linear-gradient(45deg, #f8f9fa, #ffffff); /* 7. ФОН В ЯЧЕЙКАХ */
+}
+
+#stats tr:hover { /* 7. HOVER-ЭФФЕКТ ДЛЯ СТРОК */
+    background: linear-gradient(45deg, #fff3e0, #ffe0b2); /* 7. ФОН ПРИ НАВЕДЕНИИ */
+    transform: scale(1.02); /* 9. ТРАНСФОРМАЦИЯ */
+}
+
+.video-frame {
+    border-radius: 15px; /* 5. СКРУГЛЕНИЕ УГЛОВ */
+    box-shadow: 0 20px 30px rgba(0,0,0,0.3); /* 5. ТЕНЬ */
+    transition: all 0.5s; /* 9. ТРАНСФОРМАЦИЯ */
+    border: 5px solid white; /* 5. БОРДЕР */
+    max-width: 100%;
+}
+
+.video-frame:hover { /* 4. HOVER-ЭФФЕКТ */
+    transform: perspective(1000px) rotateY(5deg) scale(1.02); /* 9. ТРАНСФОРМАЦИЯ */
+    box-shadow: 0 30px 40px rgba(178, 34, 34, 0.3);
+}
+
+.audio-player {
+    width: 100%;
+    max-width: 560px;
+    border-radius: 40px; /* 5. СКРУГЛЕНИЕ УГЛОВ */
+    margin: 15px 0;
+    transition: all 0.3s; /* 9. ТРАНСФОРМАЦИЯ */
+}
+
+.audio-player:hover { /* 4. HOVER-ЭФФЕКТ */
+    transform: scale(1.02); /* 9. ТРАНСФОРМАЦИЯ */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.95); /* 2. ЦВЕТ ФОНА */
+    padding: 30px;
+    border-radius: 20px; /* 5. СКРУГЛЕНИЕ УГЛОВ */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15); /* 2. ТЕНЬ */
+}
+
+.form-fieldset {
+    border: 2px solid #e0e0e0; /* 8. СТИЛИЗАЦИЯ ПОЛЕЙ ФОРМ */
+    border-radius: 15px; /* 8. СКРУГЛЕНИЕ УГЛОВ */
+    padding: 25px;
+    margin-bottom: 25px;
+    background: white; /* 2. ЦВЕТ ФОНА */
+}
+
+.form-fieldset:hover { /* 4. HOVER-ЭФФЕКТ */
+    border-color: #b22222; /* 8. ИЗМЕНЕНИЕ ЦВЕТА ГРАНИЦЫ */
+    box-shadow: 0 10px 20px rgba(178, 34, 34, 0.1);
+}
+
+.fieldset-legend {
+    background: linear-gradient(45deg, #b22222, #8b0000); /* 8. ГРАДИЕНТ ДЛЯ ФОНА */
+    color: white; /* 2. ЦВЕТ ТЕКСТА */
+    padding: 10px 25px;
+    border-radius: 30px; /* 8. СКРУГЛЕНИЕ */
+    font-weight: 600; /* 3. ЖИРНЫЙ ТЕКСТ */
+    letter-spacing: 1px;
+    border: 2px solid white;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.form-label {
+    font-weight: 600; /* 3. ЖИРНЫЙ ТЕКСТ */
+    color: #2c3e50; /* 2. ЦВЕТ ТЕКСТА */
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form-input {
+    border: 2px solid #ddd; /* 8. СТИЛИЗАЦИЯ ПОЛЕЙ ФОРМ */
+    border-radius: 8px; /* 8. СКРУГЛЕНИЕ */
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    font-family: inherit;
+    transition: all 0.3s ease; /* 9. ТРАНСФОРМАЦИЯ */
+}
+
+.form-input:focus { /* 8. СТИЛИЗАЦИЯ ПРИ ФОКУСЕ */
+    border-color: #b22222;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(178, 34, 34, 0.2);
+    transform: scale(1.02); /* 9. ТРАНСФОРМАЦИЯ */
+}
+
+.submit-button, .reset-button { /* 8. СТИЛИЗАЦИЯ КНОПОК */
+    background: linear-gradient(45deg, #b22222, #8b0000); /* 8. ГРАДИЕНТ ДЛЯ КНОПОК */
+    color: white; /* 2. ЦВЕТ ТЕКСТА */
+    border: none;
+    padding: 15px 35px;
+    margin: 10px;
+    border-radius: 50px; /* 8. СКРУГЛЕНИЕ */
+    cursor: pointer;
+    font-weight: 600; /* 3. ЖИРНЫЙ ТЕКСТ */
+    font-size: 1.1em;
+    text-transform: uppercase; /* 3. ЗАГЛАВНЫЕ БУКВЫ */
+    letter-spacing: 1px;
+    transition: all 0.3s; /* 9. ТРАНСФОРМАЦИЯ */
+    box-shadow: 0 10px 20px rgba(178, 34, 34, 0.3); /* 8. ТЕНЬ ДЛЯ КНОПОК */
+}
+
+.reset-button {
+    background: linear-gradient(45deg, #7f8c8d, #34495e); /* 8. ГРАДИЕНТ ДЛЯ КНОПКИ СБРОСА */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.submit-button:hover, .reset-button:hover { /* 4. HOVER-ЭФФЕКТ ДЛЯ КНОПОК */
+    transform: translateY(-3px) scale(1.05); /* 9. ТРАНСФОРМАЦИЯ */
+    box-shadow: 0 15px 30px rgba(178, 34, 34, 0.4);
+}
+
+input[type="radio"], input[type="checkbox"] { /* 8. СТИЛИЗАЦИЯ РАДИО И ЧЕКБОКСОВ */
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    accent-color: #b22222; /* 2. ЦВЕТ ДЛЯ ЭЛЕМЕНТОВ ФОРМ */
+}
+
+input[type="range"] { /* 8. СТИЛИЗАЦИЯ ПОЛЗУНКА */
+    width: 100%;
+    max-width: 300px;
+    height: 10px;
+    background: linear-gradient(90deg, #b22222, #4caf50); /* 8. ГРАДИЕНТ */
+    border-radius: 5px;
+    -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    background: white;
+    border-radius: 50%; /* 5. КРУГЛАЯ ФОРМА */
+    cursor: pointer;
+    border: 3px solid #b22222; /* 5. БОРДЕР */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+select { /* 8. СТИЛИЗАЦИЯ ВЫПАДАЮЩЕГО СПИСКА */
+    padding: 10px 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1em;
+    cursor: pointer;
+    background: white;
+    width: 100%;
+    max-width: 300px;
+    transition: all 0.3s;
+}
+
+select:hover { /* 4. HOVER-ЭФФЕКТ */
+    border-color: #b22222;
+}
+
+input[type="file"] { /* 8. СТИЛИЗАЦИЯ ЗАГРУЗКИ ФАЙЛА */
+    padding: 10px;
+    border: 2px dashed #b22222; /* 5. ПУНКТИРНЫЙ БОРДЕР */
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    cursor: pointer;
+    background: #fff9f9;
+}
+
+.page-footer {
+    background: linear-gradient(135deg, #1a1a1a, #2c3e50); /* 2. ГРАДИЕНТ ДЛЯ ФОНА */
+    color: white; /* 2. ЦВЕТ ТЕКСТА */
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: 5vh;
+}
+
+.back-to-top {
+    color: #ffd700; /* 2. ЦВЕТ ТЕКСТА */
+    font-weight: bold; /* 3. ЖИРНЫЙ ТЕКСТ */
+    text-transform: uppercase; /* 3. ЗАГЛАВНЫЕ БУКВЫ */
+    text-decoration: none;
+}
+
+.back-to-top:hover { /* 4. HOVER-ЭФФЕКТ */
+    color: #ffffff; /* 4. HOVER-ЭФФЕКТ */
+    background-color: #b22222; /* 4. HOVER-ЭФФЕКТ */
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+/* 4. СЕЛЕКТОР ИДЕНТИФИКАТОРА (#id)                   */
+#bio {
+    background: rgba(255, 255, 255, 0.95); /* 2. ЦВЕТ ФОНА */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* 2. ТЕНЬ */
+    margin-bottom: 30px;
+}
+
+#stats {
+    background: white; /* 2. ЦВЕТ ФОНА */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* 2. ТЕНЬ */
+    margin-bottom: 30px;
+}
+
+#media {
+    background: linear-gradient(45deg, #f3f3f3, #ffffff); /* 2. ГРАДИЕНТ ДЛЯ ФОНА */
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+#form {
+    margin-bottom: 30px;
+}
+/* 5. СЕЛЕКТОР АТРИБУТА ([attr])*/
+img[alt] {
+    border: 3px solid #b22222; /* 5. БОРДЕР */
+}
+
+a[href^="https"] {
+    color: #c43e00; /* 2. ЦВЕТ ТЕКСТА */
+    font-weight: 600; /* 3. ЖИРНЫЙ ТЕКСТ */
+    position: relative;
+    padding-right: 20px;
+}
+
+a[href="https://example.com"] {
+    color: #b22222; /* 2. ЦВЕТ ТЕКСТА */
+    font-weight: 600; /* 3. ЖИРНЫЙ ТЕКСТ */
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="tel"] {
+    border: 2px solid #ddd; /* 8. СТИЛИЗАЦИЯ ПОЛЕЙ ФОРМ */
+    border-radius: 8px; /* 8. СКРУГЛЕНИЕ */
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    font-family: inherit;
+    transition: all 0.3s ease; /* 9. ТРАНСФОРМАЦИЯ */
+}
+
+input[type="text"]:hover, 
+input[type="email"]:hover, 
+input[type="tel"]:hover { /* 4. HOVER-ЭФФЕКТ */
+    border-color: #b22222;
+}
+
+input[type="submit"] {
+    background: linear-gradient(45deg, #b22222, #8b0000); /* 8. СТИЛИЗАЦИЯ КНОПОК */
+    color: white; /* 2. ЦВЕТ ТЕКСТА */
+    border: none;
+    padding: 15px 35px;
+    margin: 10px;
+    border-radius: 50px; /* 8. СКРУГЛЕНИЕ */
+    cursor: pointer;
+    font-weight: 600; /* 3. ЖИРНЫЙ ТЕКСТ */
+}
+/* 6. ПСЕВДОКЛАСС (:hover, :focus, :nth-child и др.)  */
+.nav-link:hover {
+    background: #ffd700; /* 4. HOVER-ЭФФЕКТ */
+    color: #8b0000; /* 4. HOVER-ЭФФЕКТ */
+}
+
+.bio-image:hover {
+    transform: rotate(2deg) scale(1.05); /* 9. ТРАНСФОРМАЦИЯ */
+    border-radius: 30px 10px; /* 5. СКРУГЛЕНИЕ УГЛОВ */
+    box-shadow: 0 30px 40px -10px #b22222; /* 5. ТЕНЬ */
+}
+
+.list-item:hover {
+    transform: translateX(10px); /* 9. ТРАНСФОРМАЦИЯ */
+    box-shadow: 0 5px 15px rgba(178, 34, 34, 0.2);
+    border-left-width: 6px;
+}
+
+.fact-item:hover {
+    transform: scale(1.02); /* 9. ТРАНСФОРМАЦИЯ */
+    background: white; /* 2. ЦВЕТ ФОНА */
+    box-shadow: 0 8px 25px rgba(178, 34, 34, 0.2);
+}
+
+.list-link:hover {
+    color: #ffd700; /* 4. HOVER-ЭФФЕКТ */
+    background-color: #b22222; /* 4. HOVER-ЭФФЕКТ */
+    border-radius: 5px;
+    transform: translateX(5px); /* 9. ТРАНСФОРМАЦИЯ */
+}
+
+.form-fieldset:hover {
+    border-color: #b22222; /* 8. ИЗМЕНЕНИЕ ЦВЕТА ГРАНИЦЫ */
+    box-shadow: 0 10px 20px rgba(178, 34, 34, 0.1);
+}
+
+.submit-button:hover, .reset-button:hover {
+    transform: translateY(-3px) scale(1.05); /* 9. ТРАНСФОРМАЦИЯ */
+    box-shadow: 0 15px 30px rgba(178, 34, 34, 0.4);
+}
+
+.back-to-top:hover {
+    color: #ffffff; /* 4. HOVER-ЭФФЕКТ */
+    background-color: #b22222; /* 4. HOVER-ЭФФЕКТ */
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.audio-player:hover {
+    transform: scale(1.02); /* 9. ТРАНСФОРМАЦИЯ */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.video-frame:hover {
+    transform: perspective(1000px) rotateY(5deg) scale(1.02); /* 9. ТРАНСФОРМАЦИЯ */
+    box-shadow: 0 30px 40px rgba(178, 34, 34, 0.3);
+}
+
+input:focus, 
+textarea:focus, 
+select:focus {
+    border-color: #b22222;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(178, 34, 34, 0.2);
+}
+
+#stats tr:nth-child(even) {
+    background: linear-gradient(45deg, #f8f9fa, #ffffff); /* 7. ФОН В ЯЧЕЙКАХ */
+}
+
+#stats tr:hover {
+    background: linear-gradient(45deg, #fff3e0, #ffe0b2); /* 7. ФОН ПРИ НАВЕДЕНИИ */
+    transform: scale(1.02); /* 9. ТРАНСФОРМАЦИЯ */
+}
+/* 7. ПСЕВДОЭЛЕМЕНТ (::before, ::after, ::first-letter) */
+.section-title::before {
+    content: "🏀 ";
+    font-size: 1.3em;
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3)); /* 2. ТЕНЬ */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ffd700, #ff8c00); /* 2. ГРАДИЕНТ */
+    border-radius: 2px;
+}
+
+.subheading::before {
+    content: "⭐ ";
+    color: #ffd700; /* 2. ЦВЕТ ТЕКСТА */
+    font-size: 1.1em;
+}
+
+.list-item::before {
+    content: counter(item) ".";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 900; /* 3. ЖИРНЫЙ ТЕКСТ */
+    color: #b22222; /* 2. ЦВЕТ ТЕКСТА */
+    font-size: 1.3em;
+}
+
+.roman-list .list-item::before {
+    content: counter(item, upper-roman) ".";
+    color: #4a90e2; /* 2. ЦВЕТ ТЕКСТА */
+}
+
+.fact-item::before { /* 6. СОБСТВЕННЫЙ ГРАФИЧЕСКИЙ МАРКЕР */
+    content: "🏀";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3em;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2)); /* 2. ТЕНЬ */
+}
+
+.external-link::after {
+    content: "↗";
+    position: absolute;
+    right: 0;
+    top: -2px;
+    font-size: 1.2em;
+}
+
+a[href^="https"]::after {
+    content: "↗";
+    position: absolute;
+    right: 0;
+    top: -2px;
+    font-size: 1.2em;
+}
+
+#bio > p:first-of-type::first-letter { /* 3. ОФОРМЛЕНИЕ ТЕКСТА - ПЕРВАЯ БУКВА */
+    font-size: 4em;
+    font-family: 'ChicagoBulls', 'Roboto Slab', serif; /* 1. НЕСТАНДАРТНЫЙ ШРИФТ */
+    color: #b22222; /* 2. ЦВЕТ ТЕКСТА */
+    float: left;
+    margin-right: 10px;
+    line-height: 0.8;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.1); /* 2. ТЕНЬ ТЕКСТА */
+}
+/* 8. ДОЧЕРНИЙ СЕЛЕКТОР (родитель > ребенок)*/
+nav > ul {
+    list-style: none;
+}
+
+#bio > h2 {
+    margin-top: 0;
+}
+
+#stats > table {
+    width: 100%;
+}
+
+form > fieldset {
+    border: 2px solid #e0e0e0; /* 8. СТИЛИЗАЦИЯ ПОЛЕЙ ФОРМ */
+    border-radius: 15px; /* 8. СКРУГЛЕНИЕ */
+    padding: 25px;
+    margin-bottom: 25px;
+}
+/* 9. СОСЕДНИЙ СЕЛЕКТОР (элемент + сосед)             */
+h2 + p {
+    font-style: italic; /* 3. КУРСИВНЫЙ ТЕКСТ */
+    color: #666; /* 2. ЦВЕТ ТЕКСТА */
+    border-left: 4px solid #b22222; /* 2. ЦВЕТ ГРАНИЦЫ */
+    padding-left: 20px;
+    margin: 15px 0;
+    background: rgba(178, 34, 34, 0.05); /* 2. ЦВЕТ ФОНА */
+    padding: 15px;
+    border-radius: 0 10px 10px 0;
+}
+
+th + th {
+    border-left: 2px solid white; /* 7. БОРДЕРЫ В ТАБЛИЦЕ */
+}
+
+label + input {
+    margin-top: 5px;
+}
+
+/* 10. РОДСТВЕННЫЙ СЕЛЕКТОР (элемент ~ элемент)       */
+h2 ~ h3 {
+    margin-top: 30px;
+    color: #b22222; /* 2. ЦВЕТ ТЕКСТА */
+}
+
+th ~ td {
+    text-align: center; /* 3. ВЫРАВНИВАНИЕ ТЕКСТА */
+}
+
+/* 10. КАСКАДНОСТЬ CSS И ПРАВИЛО ПРИОРИТЕТОВ */
+/* ПРИМЕР 1: КАСКАДНОСТЬ (НИЖЕЛЕЖАЩИЕ ПРАВИЛА ПЕРЕОПРЕДЕЛЯЮТ ВЫШЕЛЕЖАЩИЕ) */
+p {
+    color: #333; /* БУДЕТ ПЕРЕОПРЕДЕЛЕНО */
+    font-size: 1em;
+}
+
+p {
+    color: #444; /* ЭТО ЗНАЧЕНИЕ ПРИМЕНИТСЯ (НИЖЕ В КОДЕ) */
+    line-height: 1.7; /* ДОБАВЛЯЕТСЯ НОВОЕ СВОЙСТВО */
+}
+
+/* ПРИМЕР 2: СПЕЦИФИЧНОСТЬ СЕЛЕКТОРОВ */
+/* СЕЛЕКТОР ТЕГА (НИЗКАЯ СПЕЦИФИЧНОСТЬ) */
+section p {
+    color: #2c3e50;
+    border-left: 3px solid #b22222;
+}
+
+/* СЕЛЕКТОР КЛАССА (ВЫШЕ СПЕЦИФИЧНОСТЬ) */
+.highlight-text {
+    color: #8b0000; /* ПЕРЕОПРЕДЕЛИТ СЕЛЕКТОР ТЕГА */
+    border-left: 3px solid #ffd700;
+}
+
+/* СЕЛЕКТОР ID (ЕЩЕ ВЫШЕ СПЕЦИФИЧНОСТЬ) */
+#bio p {
+    color: #1a1a1a; /* ПЕРЕОПРЕДЕЛИТ ВСЕ ПРЕДЫДУЩИЕ */
+    border-left: 3px solid #4caf50;
+}
+
+/* INLINE-СТИЛИ (САМЫЕ ВЫСОКИЕ) - ДОБАВЛЕНЫ В HTML */
+#form h2 {
+    color: #006400; /* НЕ ПРИМЕНИТСЯ ИЗ-ЗА INLINE-СТИЛЯ В HTML */
+}
+
+/* ПРИМЕР 3: !important (ПЕРЕОПРЕДЕЛЯЕТ ДАЖЕ INLINE-СТИЛИ) */
+.important-example {
+    color: #ff0000 !important; /* ЭТОТ ЦВЕТ БУДЕТ ПРИМЕНЕН В ЛЮБОМ СЛУЧАЕ */
+}
+
+/* ПРИМЕР 4: НАСЛЕДОВАНИЕ */
+body {
+    font-family: 'Montserrat', 'Roboto Slab', 'Oswald', Arial, sans-serif; /* НАСЛЕДУЕТСЯ ВСЕМИ ЭЛЕМЕНТАМИ */
+    color: #333; /* НАСЛЕДУЕТСЯ БОЛЬШИНСТВОМ ТЕКСТОВЫХ ЭЛЕМЕНТОВ */
+}
+
+/* НЕКОТОРЫЕ СВОЙСТВА НЕ НАСЛЕДУЮТСЯ (border, margin, padding и др.) */
+div {
+    border: 1px solid black; /* НЕ НАСЛЕДУЕТСЯ ДОЧЕРНИМИ ЭЛЕМЕНТАМИ */
+}
+
+/* ПРИМЕР 5: ВЕС СЕЛЕКТОРОВ */
+/* 0-0-1 (ОДИН ТЕГ) */
+li { color: blue; }
+
+/* 0-1-0 (ОДИН КЛАСС) */
+.list-item { color: green; } /* ПЕРЕОПРЕДЕЛИТ li */
+
+/* 0-1-1 (КЛАСС + ТЕГ) */
+li.list-item { color: purple; } /* ПЕРЕОПРЕДЕЛИТ .list-item */
+
+/* 1-0-0 (ОДИН ID) */
+#bio { color: red; } /* ПЕРЕОПРЕДЕЛИТ ВСЕ ВЫШЕ */
+
+/* 4. ЕДИНИЦЫ ИЗМЕРЕНИЯ В CSS                         */
+
+/* АБСОЛЮТНЫЕ ЕДИНИЦЫ */
+.absolute-example {
+    font-size: 16px;        /* пиксели */
+    border: 2px solid red;   /* пиксели */
+    width: 800px;            /* пиксели */
+    margin: 0.5cm;           /* сантиметры - абсолютная единица */
+    padding: 1cm;            /* сантиметры */
+}
+
+h1 {
+    font-size: 48px;         /* АБСОЛЮТНАЯ: пиксели */
+    border-bottom: 3px solid #b22222; /* АБСОЛЮТНАЯ: пиксели */
+    letter-spacing: 1px;     /* АБСОЛЮТНАЯ: пиксели */
+}
+
+.stats-table {
+    border: 2px solid #333;  /* АБСОЛЮТНАЯ: пиксели */
+}
+
+.bio-image {
+    border: 5px solid white;  /* АБСОЛЮТНАЯ: пиксели */
+}
+
+/* ОТНОСИТЕЛЬНЫЕ ЕДИНИЦЫ */
+.relative-example {
+    font-size: 1.2em;         /* em - относительно родителя */
+    width: 50%;               /* проценты - относительно родителя */
+    height: 100vh;            /* vh - относительно высоты окна браузера */
+    width: 100vw;             /* vw - относительно ширины окна браузера */
+    font-size: 1.5rem;        /* rem - относительно корневого элемента html */
+    line-height: 1.6;         /* без единицы - относительно текущего шрифта */
+}
+
+h2 {
+    font-size: 2.2em;         /* ОТНОСИТЕЛЬНАЯ: em */
+    margin: 30px 0 20px 0;    /* АБСОЛЮТНАЯ: px */
+}
+
+h3 {
+    font-size: 1.5em;         /* ОТНОСИТЕЛЬНАЯ: em */
+}
+
+.subtitle {
+    font-size: 1.5em;         /* ОТНОСИТЕЛЬНАЯ: em */
+}
+
+.nav-menu {
+    padding: 15px 30px;       /* АБСОЛЮТНАЯ: px */
+}
+
+.bullet-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* fr - относительная единица для grid */
+    gap: 15px;                /* АБСОЛЮТНАЯ: px */
+}
+
+.video-frame {
+    max-width: 100%;          /* ОТНОСИТЕЛЬНАЯ: проценты */
+}
+
+.audio-player {
+    width: 100%;              /* ОТНОСИТЕЛЬНАЯ: проценты */
+    max-width: 560px;         /* АБСОЛЮТНАЯ: px */
+}
+
+.page-footer {
+    margin-top: 5vh;          /* ОТНОСИТЕЛЬНАЯ: vh - 5% от высоты окна браузера */
+}
+
+/* ВЫЧИСЛЯЕМЫЕ ЕДИНИЦЫ (calc) */
+.calc-example {
+    width: calc(100% - 40px);           /* проценты минус пиксели */
+    height: calc(100vh - 100px);         /* vh минус пиксели */
+    font-size: calc(1em + 2px);          /* em плюс пиксели */
+    margin: calc(10px + 2%);             /* пиксели плюс проценты */
+    padding: calc(1rem - 2px);           /* rem минус пиксели */
+}
+
+.bio-image {
+    width: calc(50% - 20px);    /* ВЫЧИСЛЯЕМАЯ: проценты минус пиксели */
+    min-width: 250px;           /* АБСОЛЮТНАЯ: пиксели */
+}
+
+.stats-table {
+    width: calc(100% - 40px);   /* ВЫЧИСЛЯЕМАЯ: проценты минус пиксели */
+    margin: 0 auto;
+}
+
+.contact-form {
+    width: calc(100% - 60px);   /* ВЫЧИСЛЯЕМАЯ: проценты минус пиксели */
+    margin: 0 auto;
+}
+
+.form-input {
+    width: calc(100% - 20px);   /* ВЫЧИСЛЯЕМАЯ: проценты минус пиксели */
+    max-width: 400px;           /* АБСОЛЮТНАЯ: пиксели */
+}
+
+/* ДОПОЛНИТЕЛЬНЫЕ ПРИМЕРЫ ЕДИНИЦ ИЗМЕРЕНИЯ */
+.container {
+    /* Проценты */
+    width: 80%;
+    
+    /* Em (относительно родителя) */
+    font-size: 1.2em;
+    
+    /* Rem (относительно корневого элемента) */
+    margin-top: 2rem;
+    
+    /* Vh и Vw (относительно окна браузера) */
+    min-height: 50vh;
+    max-width: 90vw;
+    
+    /* Пиксели */
+    border-radius: 10px;
+    padding: 20px;
+    
+    /* Calc */
+    margin-left: calc(10% + 20px);
+}
+/* АНИМАЦИИ*/
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+section {
+    animation: slideIn 0.8s ease-out; /* 9. АНИМАЦИЯ */
+    animation-fill-mode: both;
+}
+
+#bio { animation-delay: 0.2s; }
+#stats { animation-delay: 0.4s; }
+#media { animation-delay: 0.6s; }
+#form { animation-delay: 0.8s; }
+/* МЕДИА-ЗАПРОСЫ (адаптивность)*/
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .nav-item {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    .nav-menu {
+        border-radius: 20px;
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 36px;
+    }
+    
+    .bullet-list {
+        grid-template-columns: 1fr;
+    }
+    
+    input[type="text"], 
+    input[type="email"], 
+    input[type="tel"],
+    textarea {
+        max-width: 100%;
+    }
+}
