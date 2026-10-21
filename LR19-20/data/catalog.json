@@ -1,0 +1,124 @@
+{
+  "catalog": [
+    {
+      "id": 1,
+      "name": "Роман Коржов",
+      "category": "Ведущие",
+      "price": 1200,
+      "rating": 5,
+      "image": "Image/ansambl.png",
+      "description": "Профессиональный ведущий свадеб и корпоративов. Опыт более 10 лет.",
+      "available": true
+    },
+    {
+      "id": 2,
+      "name": "Михаил Иванов",
+      "category": "Ведущие",
+      "price": 1300,
+      "rating": 5,
+      "image": "Image/dva.png",
+      "description": "Ведущий мероприятий любого масштаба. Индивидуальный подход.",
+      "available": true
+    },
+    {
+      "id": 3,
+      "name": "Группа Драйв",
+      "category": "Музыканты",
+      "price": 2000,
+      "rating": 5,
+      "image": "Image/tri.png",
+      "description": "Кавер-группа с живым звуком. Репертуар от ретро до современных хитов.",
+      "available": true
+    },
+    {
+      "id": 4,
+      "name": "DJ Star",
+      "category": "DJ / Музыканты",
+      "price": 900,
+      "rating": 5,
+      "image": "Image/cetiri.png",
+      "description": "DJ с собственным оборудованием. Заводит любую публику.",
+      "available": true
+    },
+    {
+      "id": 5,
+      "name": "Шоу Огня",
+      "category": "Шоу",
+      "price": 1800,
+      "rating": 4,
+      "image": "Image/pat.png",
+      "description": "Завораживающее огненное шоу с профессиональными артистами.",
+      "available": true
+    },
+    {
+      "id": 6,
+      "name": "Дуэт Магия",
+      "category": "Музыканты",
+      "price": 1100,
+      "rating": 5,
+      "image": "Image/shest.png",
+      "description": "Скрипка и саксофон. Идеально для велком-зоны и ужина.",
+      "available": true
+    },
+    {
+      "id": 7,
+      "name": "Ведущая Елена",
+      "category": "Ведущие",
+      "price": 1500,
+      "rating": 5,
+      "image": "Image/sem.png",
+      "description": "Элегантная ведущая для деловых и светских мероприятий.",
+      "available": true
+    },
+    {
+      "id": 8,
+      "name": "Кавер Бэнд",
+      "category": "Музыканты",
+      "price": 2200,
+      "rating": 5,
+      "image": "Image/vosem.png",
+      "description": "Профессиональная кавер-группа с полным составом.",
+      "available": true
+    },
+    {
+      "id": 9,
+      "name": "Саксофонист на велком",
+      "category": "Саксофонисты",
+      "price": 800,
+      "rating": 4,
+      "image": "Image/concert.png",
+      "description": "Живой саксофон на входе — стильно и атмосферно.",
+      "available": true
+    },
+    {
+      "id": 10,
+      "name": "Шоу Барабанов",
+      "category": "Шоу",
+      "price": 1500,
+      "rating": 5,
+      "image": "Image/ludi.png",
+      "description": "Энергичное барабанное шоу с элементами перформанса.",
+      "available": true
+    },
+    {
+      "id": 11,
+      "name": "Ансамбль Цыганские звёзды",
+      "category": "Артисты на праздник",
+      "price": 1200,
+      "rating": 5,
+      "image": "Image/chel.png",
+      "description": "Зажигательный ансамбль с цыганскими песнями и танцами.",
+      "available": true
+    },
+    {
+      "id": 12,
+      "name": "Ведущий + DJ",
+      "category": "Ведущие",
+      "price": 2500,
+      "rating": 5,
+      "image": "Image/stadion.png",
+      "description": "Комплексный пакет: ведущий и DJ в одном лице.",
+      "available": true
+    }
+  ]
+}
