@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="author" content="StarEvents Team">
+    <meta name="keywords" content="организация мероприятий, артисты, шоу, ведущие, праздник, StarEvents">
+    <meta name="description" content="StarEvents — база артистов и исполнителей для вашего события. Организуем яркие мероприятия и впечатления.">
+    <title>StarEvents — Организуем яркие мероприятия и впечатления</title>
+    <link rel="icon" type="image/png" href="Image/favicon.png">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="js/game.js" defer></script>
+    <script src="js/scripts.js" defer></script>
+</head>
+<body>
+
+    <!-- ШАПКА И ГЛАВНЫЙ ЭКРАН -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="Image/logo.png" alt="Star Booking - Главная страница">
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#" onclick="handleCategoryClick('Ведущие'); return false;">Ведущие</a></li>
+                    <li><a href="#" onclick="handleCategoryClick('Музыканты'); return false;">Музыканты</a></li>
+                    <li><a href="#" onclick="handleCategoryClick('Шоу'); return false;">Шоу</a></li>
+                    <li><a href="#" onclick="handleCategoryClick('Услуги'); return false;">Услуги</a></li>
+                </ul>
+                <div class="nav-auth">
+                    <a href="#" class="btn-login" onclick="showLoginDialog(); return false;">Войти</a>
+                    <a href="#" class="btn btn-primary" onclick="showRegisterDialog(); return false;">Регистрация</a>
+                </div>
+            </nav>
+            
+            <div class="hero">
+                <h1>Организуем яркие мероприятия и впечатления</h1>
+                <p>База артистов и исполнителей для вашего события</p>
+                
+                <div class="search-filter">
+                    <div class="filter-item">
+                        <select class="filter-select" id="countrySelect" aria-label="Выбор страны">
+                            <option value="">Ваша страна</option>
+                            <option value="Россия">Россия</option>
+                            <option value="Казахстан">Казахстан</option>
+                            <option value="Беларусь">Беларусь</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <select class="filter-select" id="citySelect" aria-label="Выбор города">
+                            <option value="">Ваш город</option>
+                            <option value="Москва">Москва</option>
+                            <option value="Санкт-Петербург">Санкт-Петербург</option>
+                            <option value="Алматы">Алматы</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <select class="filter-select" id="categorySelect" aria-label="Выбор категории">
+                            <option value="">Категория</option>
+                            <option value="Ведущие">Ведущие</option>
+                            <option value="Музыканты">Музыканты</option>
+                            <option value="Шоу">Шоу</option>
+                        </select>
+                    </div>
+                    <button class="btn-submit" onclick="performSearch()">Найти</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- СЕКЦИЯ: КАТЕГОРИИ -->
+    <section class="categories" aria-label="Категории услуг">
+        <div class="container">
+            <h2 class="visually-hidden">Категории услуг</h2>
+            <div class="grid-4-columns" id="categoriesGrid"></div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: СПЕЦПРЕДЛОЖЕНИЯ -->
+    <section class="offers section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Спецпредложения</h2>
+                <a href="#" class="link-all" onclick="showAllOffers(); return false;">Получить больше</a>
+            </div>
+            <div class="grid-container grid-4-columns" id="offersGrid"></div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: КАК МЫ РАБОТАЕМ -->
+    <section class="how-we-work">
+        <div class="container">
+            <h2 class="section-title">Как мы работаем</h2>
+            <div class="steps-container" id="stepsContainer"></div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- DOM DASHBOARD (ЛАБОРАТОРНАЯ РАБОТА)                          -->
+    <!-- ============================================================ -->
+    <section class="dom-section" id="dom-section">
+        <div class="container">
+            <h2 class="section-title">Работа с <span>DOM (Document Object Model)</span></h2>
+            <p class="section-subtitle">Интерактивные примеры: свойства document, поиск элементов, навигация по дереву, создание/удаление узлов, работа с атрибутами и стилями.</p>
+
+            <div class="dom-block">
+                <h3 class="dom-block-title">0. Свойства объекта <code>document</code></h3>
+                <p class="dom-hint">Используются: <code>document.title</code>, <code>document.URL</code>, <code>document.domain</code>, <code>document.referrer</code>, <code>document.readyState</code>, <code>document.lastModified</code>, <code>document.characterSet</code>, <code>document.contentType</code>.</p>
+
+                <div class="dom-demo-area" id="documentDemoArea">
+                    <p class="demo-text">Объект <b>document</b> — это корень DOM-дерева. Через него можно получить доступ ко всей странице.</p>
+                    <p class="demo-text">Текущий заголовок: <b id="docTitleDisplay">...</b></p>
+                </div>
+
+                <div class="dom-buttons">
+                    <button class="btn-mini dom-btn" onclick="demoDocumentTitle()">document.title</button>
+                    <button class="btn-mini dom-btn" onclick="demoDocumentURL()">document.URL</button>
+                    <button class="btn-mini dom-btn" onclick="demoDocumentInfo()">domain / referrer</button>
+                    <button class="btn-mini dom-btn" onclick="demoDocumentReady()">readyState / lastModified</button>
+                    <button class="btn-mini dom-btn" onclick="demoDocumentCharset()">charset / contentType</button>
+                    <button class="btn-mini dom-btn" onclick="demoDocumentAll()">Показать всё сразу</button>
+                </div>
+
+                <div class="dom-result" id="documentResult">Результат появится здесь...</div>
+            </div>
+
+            <div class="dom-block">
+                <h3 class="dom-block-title">1. Поиск элементов на странице</h3>
+                <p class="dom-hint">Используются: <code>getElementById</code>, <code>querySelector</code>, <code>querySelectorAll</code>, <code>getElementsByClassName</code>.</p>
+
+                <div class="dom-demo-area" id="searchDemoArea">
+                    <p class="demo-text" id="demoText">Это демонстрационный текст для поиска.</p>
+                    <p class="demo-item">Элемент с классом demo-item #1</p>
+                    <p class="demo-item">Элемент с классом demo-item #2</p>
+                    <p class="demo-item">Элемент с классом demo-item #3</p>
+                    <span data-role="badge">Бейдж с data-атрибутом</span>
+                </div>
+
+                <div class="dom-buttons">
+                    <button class="btn-mini dom-btn" onclick="demoGetElementById()">getElementById('demoText')</button>
+                    <button class="btn-mini dom-btn" onclick="demoQuerySelector()">querySelector('.demo-item')</button>
+                    <button class="btn-mini dom-btn" onclick="demoQuerySelectorAll()">querySelectorAll('.demo-item')</button>
+                    <button class="btn-mini dom-btn" onclick="demoGetElementsByClassName()">getElementsByClassName('demo-item')</button>
+                    <button class="btn-mini dom-btn" onclick="demoQueryByDataAttr()">querySelector('[data-role="badge"]')</button>
+                </div>
+
+                <div class="dom-result" id="searchResult">Результат появится здесь...</div>
+            </div>
+
+            <div class="dom-block">
+                <h3 class="dom-block-title">2. Объект Node. Навигация по DOM</h3>
+                <p class="dom-hint">Используются: <code>parentNode</code>, <code>children</code>, <code>firstElementChild</code>, <code>lastElementChild</code>, <code>nextElementSibling</code>, <code>previousElementSibling</code>.</p>
+
+                <div class="dom-demo-area" id="navDemoArea">
+                    <div class="nav-parent" id="navParent">
+                        <p class="nav-child" id="navChild1">Ребёнок 1</p>
+                        <p class="nav-child" id="navChild2">Ребёнок 2 (выбранный)</p>
+                        <p class="nav-child" id="navChild3">Ребёнок 3</p>
+                    </div>
+                </div>
+
+                <div class="dom-buttons">
+                    <button class="btn-mini dom-btn" onclick="demoParent()">parentNode</button>
+                    <button class="btn-mini dom-btn" onclick="demoChildren()">children</button>
+                    <button class="btn-mini dom-btn" onclick="demoFirstLast()">first / last ElementChild</button>
+                    <button class="btn-mini dom-btn" onclick="demoSiblings()">next / previous Sibling</button>
+                    <button class="btn-mini dom-btn" onclick="demoNodeType()">nodeType / nodeName</button>
+                </div>
+
+                <div class="dom-result" id="navResult">Результат появится здесь...</div>
+            </div>
+
+            <div class="dom-block">
+                <h3 class="dom-block-title">3. Создание, добавление, замена и удаление элементов</h3>
+                <p class="dom-hint">Используются: <code>createElement</code>, <code>append</code>, <code>prepend</code>, <code>before</code>, <code>after</code>, <code>replaceWith</code>, <code>remove</code>.</p>
+
+                <div class="dom-demo-area" id="createDemoArea">
+                    <p class="create-item">Существующий элемент A</p>
+                    <p class="create-item">Существующий элемент B</p>
+                </div>
+
+                <div class="dom-buttons">
+                    <button class="btn-mini dom-btn" onclick="demoCreateAppend()">createElement + append</button>
+                    <button class="btn-mini dom-btn" onclick="demoCreatePrepend()">createElement + prepend</button>
+                    <button class="btn-mini dom-btn" onclick="demoInsertBefore()">insertBefore</button>
+                    <button class="btn-mini dom-btn" onclick="demoReplaceElement()">replaceWith</button>
+                    <button class="btn-mini dom-btn" onclick="demoRemoveLast()">remove() — удалить последний</button>
+                    <button class="btn-mini dom-btn" onclick="demoCloneElement()">cloneNode(true)</button>
+                </div>
+
+                <div class="dom-result" id="createResult">Результат появится здесь...</div>
+            </div>
+
+            <div class="dom-block">
+                <h3 class="dom-block-title">4. Управление атрибутами элементов</h3>
+                <p class="dom-hint">Используются: <code>getAttribute</code>, <code>setAttribute</code>, <code>removeAttribute</code>, <code>hasAttribute</code>, <code>dataset</code>, <code>classList</code>.</p>
+
+                <div class="dom-demo-area" id="attrDemoArea">
+                    <a href="https://example.com" 
+                       id="attrLink" 
+                       class="attr-link" 
+                       target="_blank" 
+                       data-category="promo"
+                       data-priority="high">Ссылка-пример</a>
+                    <div id="attrBox" class="attr-box">Блок для классов</div>
+                </div>
+
+                <div class="dom-buttons">
+                    <button class="btn-mini dom-btn" onclick="demoGetAttribute()">getAttribute('href')</button>
+                    <button class="btn-mini dom-btn" onclick="demoSetAttribute()">setAttribute('href', ...)</button>
+                    <button class="btn-mini dom-btn" onclick="demoHasAttribute()">hasAttribute('target')</button>
+                    <button class="btn-mini dom-btn" onclick="demoRemoveAttribute()">removeAttribute('target')</button>
+                    <button class="btn-mini dom-btn" onclick="demoDataset()">element.dataset</button>
+                    <button class="btn-mini dom-btn" onclick="demoClassList()">classList.toggle('active')</button>
+                </div>
+
+                <div class="dom-result" id="attrResult">Результат появится здесь...</div>
+            </div>
+
+            <div class="dom-block">
+                <h3 class="dom-block-title">5. Изменение стиля элементов</h3>
+                <p class="dom-hint">Используются: <code>style.property</code>, <code>cssText</code>, <code>classList.add/remove/toggle</code>, <code>getComputedStyle</code>.</p>
+
+                <div class="dom-demo-area">
+                    <div id="styleBox" class="style-box">Стилизуемый блок</div>
+                </div>
+
+                <div class="dom-buttons">
+                    <button class="btn-mini dom-btn" onclick="demoStyleDirect()">style.backgroundColor</button>
+                    <button class="btn-mini dom-btn" onclick="demoStyleCssText()">style.cssText</button>
+                    <button class="btn-mini dom-btn" onclick="demoAddClass()">classList.add('highlight')</button>
+                    <button class="btn-mini dom-btn" onclick="demoRemoveClass()">classList.remove('highlight')</button>
+                    <button class="btn-mini dom-btn" onclick="demoToggleClass()">classList.toggle('highlight')</button>
+                    <button class="btn-mini dom-btn" onclick="demoGetComputed()">getComputedStyle</button>
+                    <button class="btn-mini dom-btn" onclick="demoResetStyle()">Сбросить стили</button>
+                </div>
+
+                <div class="dom-result" id="styleResult">Результат появится здесь...</div>
+            </div>
+
+            <div class="dom-block">
+                <h3 class="dom-block-title">6. Реагирование на действия пользователя (события)</h3>
+                <p class="dom-hint">Используются: <code>addEventListener</code>, <code>event.target</code>, <code>event.type</code>, делегирование событий.</p>
+
+                <div class="dom-demo-area">
+                    <button class="btn-mini dom-btn" id="eventBtn">Нажми меня</button>
+                    <input type="text" id="eventInput" class="dom-input" placeholder="Введите текст и нажмите Enter">
+                    <div id="eventList" class="event-list">
+                        <p class="event-item">Кликните по этому элементу</p>
+                        <p class="event-item">Или по этому</p>
+                        <p class="event-item">Или по этому</p>
+                    </div>
+                </div>
+
+                <div class="dom-result" id="eventResult">Результат появится здесь...</div>
+            </div>
+
+            <div class="dom-block">
+                <h3 class="dom-block-title">7. Комплексный пример: динамический список артистов</h3>
+                <p class="dom-hint">Создание, поиск, удаление, редактирование — всё вместе.</p>
+
+                <div class="dom-toolbar">
+                    <input type="text" id="newArtistName" class="dom-input" placeholder="Имя артиста">
+                    <input type="number" id="newArtistPrice" class="dom-input" placeholder="Цена, ₽" style="max-width:140px;">
+                    <button class="btn-mini dom-btn dom-btn-accent" onclick="addArtistToList()">➕ Добавить</button>
+                    <button class="btn-mini dom-btn" onclick="clearArtistList()">🗑 Очистить</button>
+                    <button class="btn-mini dom-btn" onclick="sortArtistList()">🔤 Сортировать</button>
+                </div>
+
+                <ul id="dynamicArtistList" class="dynamic-list">
+                    <li class="dynamic-item">Роман Коржов — 1200 ₽ <button class="li-remove" onclick="removeListItem(this)">✕</button></li>
+                    <li class="dynamic-item">DJ Star — 900 ₽ <button class="li-remove" onclick="removeListItem(this)">✕</button></li>
+                </ul>
+
+                <div class="dom-result" id="complexResult">Элементов: 2</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- СЕКЦИЯ: ИНТЕРФЕЙСНЫЕ СОБЫТИЯ                                  -->
+    <!-- ============================================================ -->
+    <section class="events-section" id="events-section">
+        <div class="container">
+            <h2 class="section-title">Интерфейсные <span>события JavaScript</span></h2>
+            <p class="section-subtitle">Практические примеры по 7 категориям: мышь, клавиатура, Drag&Drop, указатель, прокрутка, сенсорные экраны и таймеры.</p>
+
+            <div class="events-block">
+                <h3 class="events-block-title">1. События мыши <code>click / dblclick / mouseover / mouseout / mousedown / mouseup / mousemove</code></h3>
+                <p class="events-hint">Наведите, кликните, дважды кликните или зажмите кнопку на блоке ниже — все события фиксируются в логе.</p>
+
+                <div class="mouse-zone" id="mouseZone">
+                    <span class="mouse-zone-text">🐭 Интерактивная зона мыши</span>
+                    <span class="mouse-coords" id="mouseCoords">x: 0, y: 0</span>
+                </div>
+
+                <div class="events-log" id="mouseLog">Лог событий мыши...</div>
+            </div>
+
+            <div class="events-block">
+                <h3 class="events-block-title">2. События клавиатуры <code>keydown / keyup / keypress</code></h3>
+                <p class="events-hint">Нажмите любую клавишу в поле ввода. Отслеживаются <code>keydown</code>, <code>keyup</code>, а также комбинации.</p>
+
+                <div class="keyboard-demo">
+                    <input type="text" id="keyboardInput" class="events-input" placeholder="Нажмите любую клавишу...">
+                    <div class="key-visual" id="keyVisual">?</div>
+                </div>
+
+                <div class="events-log" id="keyboardLog">Лог событий клавиатуры...</div>
+            </div>
+
+            <div class="events-block">
+                <h3 class="events-block-title">3. Drag &amp; Drop <code>dragstart / drag / dragenter / dragover / drop / dragend</code></h3>
+                <p class="events-hint">Перетащите карточку артиста в зону «Программа мероприятия».</p>
+
+                <div class="drag-container">
+                    <div class="drag-source">
+                        <p class="drag-label">Доступные артисты:</p>
+                        <div class="drag-card" draggable="true" data-artist="Роман Коржов" data-price="1200">🎤 Роман Коржов — 1200 ₽</div>
+                        <div class="drag-card" draggable="true" data-artist="DJ Star" data-price="900">🎧 DJ Star — 900 ₽</div>
+                        <div class="drag-card" draggable="true" data-artist="Шоу Огня" data-price="1800">🔥 Шоу Огня — 1800 ₽</div>
+                    </div>
+
+                    <div class="drag-dropzone" id="dropZone">
+                        <p class="drop-label">Программа мероприятия</p>
+                        <ul class="drop-list" id="dropList"></ul>
+                    </div>
+                </div>
+
+                <div class="events-log" id="dragLog">Лог Drag &amp; Drop...</div>
+            </div>
+
+            <div class="events-block">
+                <h3 class="events-block-title">4. События указателя <code>pointerdown / pointermove / pointerup / pointerover / pointerout</code></h3>
+                <p class="events-hint">Универсальные события для мыши, тачскрина и стилуса. Двигайте указателем по полю.</p>
+
+                <div class="pointer-zone" id="pointerZone">
+                    <span>👆 Двигайте указателем здесь</span>
+                    <div class="pointer-dot" id="pointerDot"></div>
+                </div>
+
+                <div class="events-log" id="pointerLog">Лог событий указателя...</div>
+            </div>
+
+            <div class="events-block">
+                <h3 class="events-block-title">5. События полосы прокрутки <code>scroll</code></h3>
+                <p class="events-hint">Прокрутите внутренний контейнер ниже — счётчик и индикатор обновляются в реальном времени.</p>
+
+                <div class="scroll-demo" id="scrollDemo">
+                    <div class="scroll-content">
+                        <p>📜 Прокрутите этот блок вниз...</p>
+                        <p>Строка 2 — StarEvents</p>
+                        <p>Строка 3 — База артистов</p>
+                        <p>Строка 4 — Организация мероприятий</p>
+                        <p>Строка 5 — Шоу-программы</p>
+                        <p>Строка 6 — Кавер-группы</p>
+                        <p>Строка 7 — Ведущие</p>
+                        <p>Строка 8 — DJ и музыканты</p>
+                        <p>Строка 9 — Саксофонисты</p>
+                        <p>Строка 10 — Фото и видео</p>
+                        <p>Строка 11 — Декорирование</p>
+                        <p>Строка 12 — Кондитеры</p>
+                        <p>Строка 13 — Салют</p>
+                        <p>Строка 14 — Локации</p>
+                        <p>Строка 15 — Конец 🎉</p>
+                    </div>
+                </div>
+
+                <div class="scroll-indicator">
+                    <div class="scroll-bar" id="scrollBar"></div>
+                </div>
+                <div class="events-log" id="scrollLog">Прокрутка: 0 px</div>
+            </div>
+
+            <div class="events-block">
+                <h3 class="events-block-title">6. События сенсорных экранов <code>touchstart / touchmove / touchend</code></h3>
+                <p class="events-hint">На мобильном устройстве коснитесь поля. На ПК можно эмулировать в DevTools (режим устройства).</p>
+
+                <div class="touch-zone" id="touchZone">
+                    <span>📱 Коснитесь этого поля</span>
+                    <div class="touch-ripple" id="touchRipple"></div>
+                </div>
+
+                <div class="events-log" id="touchLog">Лог сенсорных событий...</div>
+            </div>
+
+            <div class="events-block">
+                <h3 class="events-block-title">7. События, связанные с таймером <code>setTimeout / setInterval / clearInterval</code></h3>
+                <p class="events-hint">Таймер обратного отсчёта, секундомер и анимированный прогресс-бар.</p>
+
+                <div class="timer-demo">
+                    <div class="timer-card">
+                        <h4>⏳ Обратный отсчёт</h4>
+                        <div class="timer-display" id="countdownDisplay">10</div>
+                        <button class="btn-mini dom-btn" onclick="startCountdown()">Старт</button>
+                        <button class="btn-mini dom-btn" onclick="stopCountdown()">Стоп</button>
+                    </div>
+
+                    <div class="timer-card">
+                        <h4>⏱ Секундомер</h4>
+                        <div class="timer-display" id="stopwatchDisplay">00:00</div>
+                        <button class="btn-mini dom-btn" onclick="startStopwatch()">Старт</button>
+                        <button class="btn-mini dom-btn" onclick="stopStopwatch()">Стоп</button>
+                        <button class="btn-mini dom-btn" onclick="resetStopwatch()">Сброс</button>
+                    </div>
+
+                    <div class="timer-card">
+                        <h4>📊 Прогресс-бар</h4>
+                        <div class="progress-track">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="timer-display" id="progressPercent">0%</div>
+                        <button class="btn-mini dom-btn" onclick="startProgress()">Запустить</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: BOM DASHBOARD -->
+    <section class="bom-section" id="bom-section">
+        <div class="container">
+            <h2 class="section-title">Управление <span>BOM (Browser Object Model)</span></h2>
+            <div class="bom-grid">
+                
+                <div class="bom-card">
+                    <h3>Объект Window</h3>
+                    <p>Время на странице: <span id="page-timer">0</span> сек.</p>
+                    <p>Размер окна: <span id="win-size">...</span></p>
+                    <p>Прокрутка: <span id="win-scroll">0</span> px</p>
+                    <div class="bom-buttons">
+                        <button class="btn-mini" onclick="openPromoPopup()">Открыть промо-окно</button>
+                        <button class="btn-mini" onclick="scrollToHero()">Наверх</button>
+                        <button class="btn-mini" onclick="printPage()">Печать страницы</button>
+                    </div>
+                </div>
+
+                <div class="bom-card">
+                    <h3>Объект Navigator</h3>
+                    <p id="browser-info">Браузер: <span id="nav-agent">...</span></p>
+                    <p>Язык: <span id="nav-lang">...</span></p>
+                    <div class="bom-buttons">
+                        <button class="btn-mini" onclick="checkNetworkStatus()">Статус сети</button>
+                        <button class="btn-mini" onclick="copyReferralLink()">Копировать ссылку</button>
+                        <button class="btn-mini" onclick="showUserLang()">Язык системы</button>
+                    </div>
+                </div>
+
+                <div class="bom-card">
+                    <h3>Объект Location</h3>
+                    <p id="url-params">Параметры URL: нет</p>
+                    <p>URL: <span id="loc-href">...</span></p>
+                    <p>Hash: <span id="loc-hash">нет</span></p>
+                    <div class="bom-buttons">
+                        <button class="btn-mini" onclick="refreshCurrentPage()">Обновить страницу</button>
+                        <button class="btn-mini" onclick="goToSocial()">Наш Instagram</button>
+                        <button class="btn-mini" onclick="showPathname()">Показать путь</button>
+                    </div>
+                </div>
+
+                <div class="bom-card">
+                    <h3>Объект History</h3>
+                    <p>История сессии: <span id="hist-length">0</span> стр.</p>
+                    <div class="bom-buttons">
+                        <button class="btn-mini" onclick="goBackInHistory()">Назад</button>
+                        <button class="btn-mini" onclick="goForwardInHistory()">Вперед</button>
+                        <button class="btn-mini" onclick="historyGoStep()">Перейти на -1</button>
+                    </div>
+                </div>
+
+                <div class="bom-card">
+                    <h3>Объект Screen</h3>
+                    <p id="screen-res">Экран: <span id="scr-res">...</span></p>
+                    <p id="device-type" style="font-weight: bold; color: #ff5a5a;">Тип: ...</p>
+                    <p>Доступно: <span id="scr-avail">...</span></p>
+                    <p>Глубина цвета: <span id="scr-depth">...</span></p>
+                    <div class="bom-buttons">
+                        <button class="btn-mini" onclick="showColorDepth()">Глубина цвета</button>
+                        <button class="btn-mini" onclick="showAvailableScreen()">Доступная область</button>
+                        <button class="btn-mini" onclick="checkOrientation()">Ориентация</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- СЕКЦИЯ: ПОЛЬЗОВАТЕЛЬСКИЕ ОБЪЕКТЫ (ЛР16)                     -->
+    <!-- ============================================================ -->
+    <section class="objects-section" id="objects-section">
+        <div class="container">
+            <h2 class="section-title">Пользовательские <span>объекты JavaScript</span></h2>
+            <p class="section-subtitle">Лабораторная работа №16: создание объектов, доступ к свойствам, методы, удаление и проверка свойств, перебор, вложенные объекты и комплексный пример — телефонный справочник.</p>
+
+            <div class="objects-block">
+                <h3 class="objects-block-title">Задание 1. Создание и доступ к объекту <code>book</code></h3>
+                <p class="objects-hint">Литеральная нотация, точечная и скобочная нотация доступа к свойствам.</p>
+                <div class="objects-demo">
+                    <p><b>Книга:</b> <span id="bookInfo">—</span></p>
+                </div>
+                <div class="objects-buttons">
+                    <button class="btn-mini objects-btn" onclick="demoBookObject()">Создать объект book</button>
+                    <button class="btn-mini objects-btn" onclick="demoBookDot()">Доступ через точку</button>
+                    <button class="btn-mini objects-btn" onclick="demoBookBracket()">Доступ через скобки</button>
+                    <button class="btn-mini objects-btn" onclick="demoBookDynamic()">Динамический ключ</button>
+                </div>
+                <div class="objects-result" id="bookResult">Результат появится здесь...</div>
+            </div>
+
+            <div class="objects-block">
+                <h3 class="objects-block-title">Задание 2. Работа с методами объекта</h3>
+                <p class="objects-hint">Методы внутри объекта и ключевое слово <code>this</code>.</p>
+                <div class="objects-demo">
+                    <p><b>Артист:</b> <span id="artistInfo">—</span></p>
+                </div>
+                <div class="objects-buttons">
+                    <button class="btn-mini objects-btn" onclick="demoArtistMethod()">Вызвать метод getInfo()</button>
+                    <button class="btn-mini objects-btn" onclick="demoArtistRaise()">Метод raisePrice(10%)</button>
+                    <button class="btn-mini objects-btn" onclick="demoArtistThis()">Показать this</button>
+                </div>
+                <div class="objects-result" id="artistResult">Результат появится здесь...</div>
+            </div>
+
+            <div class="objects-block">
+                <h3 class="objects-block-title">Задание 3. Удаление и проверка свойств</h3>
+                <p class="objects-hint">Оператор <code>delete</code>, оператор <code>in</code> и метод <code>hasOwnProperty()</code>.</p>
+                <div class="objects-demo">
+                    <p><b>Объект:</b> <span id="propInfo">—</span></p>
+                </div>
+                <div class="objects-buttons">
+                    <button class="btn-mini objects-btn" onclick="demoCheckIn()">Проверка через in</button>
+                    <button class="btn-mini objects-btn" onclick="demoCheckHasOwn()">Проверка hasOwnProperty()</button>
+                    <button class="btn-mini objects-btn" onclick="demoDeleteProp()">Удалить свойство</button>
+                    <button class="btn-mini objects-btn" onclick="demoResetProps()">Восстановить объект</button>
+                </div>
+                <div class="objects-result" id="propResult">Результат появится здесь...</div>
+            </div>
+
+            <div class="objects-block">
+                <h3 class="objects-block-title">Задание 4. Перебор свойств объекта</h3>
+                <p class="objects-hint">Способы: <code>for...in</code>, <code>Object.keys()</code>, <code>Object.values()</code>, <code>Object.entries()</code>.</p>
+                <div class="objects-demo">
+                    <p><b>Объект для перебора:</b> <span id="iterInfo">—</span></p>
+                </div>
+                <div class="objects-buttons">
+                    <button class="btn-mini objects-btn" onclick="demoForIn()">for...in</button>
+                    <button class="btn-mini objects-btn" onclick="demoObjectKeys()">Object.keys()</button>
+                    <button class="btn-mini objects-btn" onclick="demoObjectValues()">Object.values()</button>
+                    <button class="btn-mini objects-btn" onclick="demoObjectEntries()">Object.entries()</button>
+                    <button class="btn-mini objects-btn" onclick="demoObjectAll()">Показать всё</button>
+                </div>
+                <div class="objects-result" id="iterResult">Результат появится здесь...</div>
+            </div>
+
+            <div class="objects-block">
+                <h3 class="objects-block-title">Задание 5. Вложенные объекты</h3>
+                <p class="objects-hint">Доступ к глубоко вложенным свойствам, вложенные объекты и массивы.</p>
+                <div class="objects-demo">
+                    <p><b>Организатор:</b> <span id="nestedInfo">—</span></p>
+                </div>
+                <div class="objects-buttons">
+                    <button class="btn-mini objects-btn" onclick="demoNestedAccess()">Доступ к вложенным</button>
+                    <button class="btn-mini objects-btn" onclick="demoNestedChange()">Изменить вложенное свойство</button>
+                    <button class="btn-mini objects-btn" onclick="demoNestedArray()">Вложенный массив</button>
+                    <button class="btn-mini objects-btn" onclick="demoNestedOptional()">Опциональная цепочка ?.</button>
+                </div>
+                <div class="objects-result" id="nestedResult">Результат появится здесь...</div>
+            </div>
+
+            <div class="objects-block">
+                <h3 class="objects-block-title">Задание 6. Практическое применение — телефонный справочник</h3>
+                <p class="objects-hint">Комплексная задача: создание, добавление, поиск, удаление, проверка и перебор контактов.</p>
+
+                <div class="objects-toolbar">
+                    <input type="text" id="contactName" class="objects-input" placeholder="Имя контакта">
+                    <input type="tel" id="contactPhone" class="objects-input" placeholder="Телефон">
+                    <button class="btn-mini objects-btn-accent" onclick="addContact()">➕ Добавить</button>
+                    <button class="btn-mini objects-btn" onclick="showAllContacts()">📋 Показать все</button>
+                    <button class="btn-mini objects-btn" onclick="clearContacts()">🗑 Очистить</button>
+                </div>
+
+                <div class="objects-toolbar">
+                    <input type="text" id="searchContact" class="objects-input" placeholder="Поиск по имени">
+                    <button class="btn-mini objects-btn" onclick="searchContact()">🔍 Найти</button>
+                    <button class="btn-mini objects-btn" onclick="deleteContact()">❌ Удалить по имени</button>
+                    <button class="btn-mini objects-btn" onclick="checkContact()">✅ Проверить наличие</button>
+                </div>
+
+                <ul id="contactsList" class="contacts-list"></ul>
+
+                <div class="objects-result" id="contactsResult">Контактов: 0</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- СЕКЦИЯ ООП-ИГРЫ "КОСМИЧЕСКИЙ ЗАЩИТНИК"                       -->
+    <!-- ============================================================ -->
+    <section class="game-section" id="game-section">
+        <div class="container">
+            <h2 class="section-title">ООП-игра <span>«Космический защитник»</span></h2>
+            <p class="section-subtitle">
+                Демонстрация принципов ООП: инкапсуляция (приватные поля <code>#</code>),
+                наследование (<code>GameObject → Player, Enemy → Meteor, UFO</code>),
+                полиморфизм (переопределение <code>update()</code> и <code>draw()</code>)
+                и абстракция (базовый класс <code>GameObject</code>).
+                <br><b>Стреляют только НЛО. Собирайте бонусы, уклоняйтесь от красных пуль!</b>
+            </p>
+
+            <!-- Панель HUD (обычный режим) -->
+            <div class="game-info">
+                <div class="game-info__item">
+                    Счёт
+                    <span class="game-info__value js-gameScore" id="gameScore">0</span>
+                </div>
+                <div class="game-info__item">
+                    Жизни
+                    <span class="game-info__value game-info__value--hp js-gameHp" id="gameHp">❤️❤️❤️</span>
+                </div>
+                <div class="game-info__item">
+                    Уровень
+                    <span class="game-info__value js-gameLevel" id="gameLevel">1</span>
+                </div>
+                <button class="game-fullscreen-btn" id="gameFullscreenBtn" type="button">
+                    ⛶ На весь экран
+                </button>
+            </div>
+
+            <div class="game-wrapper">
+                <canvas id="gameCanvas" class="game-canvas"></canvas>
+
+                <!-- HUD внутри wrapper — виден только в полноэкранном режиме -->
+                <div class="game-hud" id="gameHud">
+                    <div class="game-hud__item">
+                        <span class="game-hud__label">Счёт</span>
+                        <span class="game-hud__value js-gameScore">0</span>
+                    </div>
+                    <div class="game-hud__item">
+                        <span class="game-hud__label">Жизни</span>
+                        <span class="game-hud__value game-hud__value--hp js-gameHp">❤️❤️❤️</span>
+                    </div>
+                    <div class="game-hud__item">
+                        <span class="game-hud__label">Уровень</span>
+                        <span class="game-hud__value js-gameLevel">1</span>
+                    </div>
+                    <button class="game-hud__exit" id="gameHudExitBtn" type="button">
+                        ✕ Выйти
+                    </button>
+                </div>
+
+                <div class="game-overlay game-overlay--visible" id="gameOverlay">
+                    <h3 class="game-overlay__title" id="gameOverlayTitle">🚀 Космический защитник</h3>
+                    <p class="game-overlay__text" id="gameOverlayText">
+                        Уничтожайте метеориты и НЛО, собирайте бонусы.
+                        Осторожно: НЛО стреляют красными пулями!
+                    </p>
+                    <button class="game-overlay__btn" id="gameOverlayBtn">Начать игру</button>
+                </div>
+            </div>
+
+            <div class="game-controls-help">
+                <span><kbd>←</kbd><kbd>→</kbd> / <kbd>A</kbd><kbd>D</kbd> — движение</span>
+                <span><kbd>Space</kbd> — выстрел</span>
+                <span><kbd>P</kbd> — пауза</span>
+                <span><kbd>F</kbd> — на весь экран</span>
+                <span>Мобильные: тап по экрану</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="faq-title">Часто <span>задаваемые вопросы</span></h2>
+            <div class="faq-container" id="faqContainer"></div>
+            <div class="faq-action">
+                <button class="btn-submit" onclick="showApplicationForm()">Отправить заявку</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ: ПОПУЛЯРНЫЕ АРТИСТЫ -->
+    <section class="popular-artists">
+        <div class="container">
+            <h2 class="artists-title">Популярные <span>артисты и шоу</span></h2>
+            <div class="artists-grid" id="artistsGrid"></div>
+        </div>
+    </section>
+
+    <!-- БАННЕР -->
+    <section class="cta-base-banner">
+        <div class="container">
+            <h2>Как попасть в нашу базу</h2>
+            <p>Для важных и неотложных переговоров — звоните</p>
+            <button class="btn btn-white" onclick="showApplicationForm()">Отправить заявку</button>
+        </div>
+    </section>
+
+    <!-- ФОРМА -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-wrapper">
+                <h2 class="section-title">Напишите <span>нам письмо</span></h2>
+                <form action="#" method="POST" class="feedback-form" id="feedbackForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Ваше имя *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Ваш Email *" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Ваш телефон">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Ваше сообщение *" required></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent">Я согласен с <a href="#">политикой обработки персональных данных</a></label>
+                    </div>
+                    <button type="submit" class="btn-submit">Отправить сообщение</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ОТЗЫВЫ -->
+    <section class="reviews-section container">
+        <h2 class="section-title">Что о нас говорят</h2>
+        <p class="section-subtitle">Quisque posuere mollis ipsum et molestie. Fusce cursus, risus vel scelerisque porttitor, leo quam vulputate nibh, sit amet blandit erat magna.</p>
+        
+        <div class="reviews-grid" id="reviewsGrid"></div>
+
+        <div class="slider-controls">
+            <button class="slider-arrow arrow-left" onclick="prevReview()" aria-label="Предыдущий отзыв">←</button>
+            <button class="slider-arrow arrow-right" onclick="nextReview()" aria-label="Следующий отзыв">→</button>
+        </div>
+
+        <div class="brands-row" id="brandsRow"></div>
+    </section>
+
+    <!-- ФИОЛЕТОВЫЙ БАННЕР -->
+    <section class="purple-cta-banner">
+        <div class="container purple-banner-content">
+            <h3>Присоединяйся к нашей большой команде нас уже <span id="artistsCount">123,000</span> артистов</h3>
+            <button class="btn-banner-white" onclick="showApplicationForm()">Отправить заявку</button>
+        </div>
+    </section>
+
+    <!-- ПОДВАЛ -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top-row">
+                <div class="footer-logo">Star Booking</div>
+                <div class="footer-auth-buttons">
+                    <a href="#" class="footer-btn-link" onclick="showRegisterDialog(); return false;">Регистрация</a>
+                    <a href="#" class="footer-btn-box" onclick="showLoginDialog(); return false;">Войти</a>
+                </div>
+            </div>
+
+            <div class="footer-grid" id="footerGrid"></div>
+
+            <div class="footer-bottom-row">
+                <p class="copyright">COPYRIGHT WOOCOMMERCE 2020 - <span>TERMS & CONDITIONS</span> <span>PRIVACY POLICY</span></p>
+                <div class="footer-socials" id="footerSocials"></div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
